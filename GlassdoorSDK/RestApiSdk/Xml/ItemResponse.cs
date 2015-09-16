@@ -1,13 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Xml.Linq;
+﻿using System.Xml.Linq;
 
 namespace Janglin.RestApiSdk.Xml
 {
-    public abstract class ItemResponse : Response
+	public abstract class ItemResponse : Response
     {
         public ItemResponse() { }
 

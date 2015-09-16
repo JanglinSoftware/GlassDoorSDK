@@ -9,7 +9,7 @@ namespace Janglin.RestApiSdk.Xml
     internal class EnumerableResponse<T>
         : Response, IEnumerable<T> where T : Response, new()
     {
-        internal EnumerableResponse(string baseUrl, string collectionTagName, string itemTagName, Verb verb, string authentication)
+        internal EnumerableResponse(string baseUrl, string collectionTagName, string itemTagName, Verb verb, string authentication, string nameSpace = null)
                  : base(verb, authentication)
         {
             ItemTagName = itemTagName;
@@ -19,57 +19,37 @@ namespace Janglin.RestApiSdk.Xml
 
             _Collection = new Lazy<IEnumerable<T>>(() =>
             {
-                var collectionelement = Element.Element(CollectionTagName.DocuSignXmlns());
+                var collectionelement = Element.Element(CollectionTagName.Xmlns(nameSpace));
 
                 if (collectionelement == null)
                     return new List<T>().AsReadOnly();
                 else
                     return Element
-                          .Element(CollectionTagName.DocuSignXmlns())
-                          .Elements(ItemTagName.DocuSignXmlns())
+                          .Element(CollectionTagName.Xmlns(nameSpace))
+                          .Elements(ItemTagName.Xmlns(nameSpace))
                           .Select(e => new T { Element = e, });
             });
         }
-        //internal EnumerableResponse(string baseUrl, Requests.Request request, string collectionTagName, string itemTagName, Verb verb, string authentication)
-        //         : base(verb, authentication)
-        //{
-        //    ItemTagName = itemTagName;
-        //    CollectionTagName = collectionTagName;
 
-        //    RunVerb(baseUrl, request);
-
-        //    _Collection = new Lazy<IEnumerable<T>>(() =>
-        //    {
-        //        var collectionelement = Element.Element(CollectionTagName.DocuSignXmlns());
-
-        //        if (collectionelement == null)
-        //            return new List<T>().AsReadOnly();
-        //        else
-        //            return Element
-        //                  .Element(CollectionTagName.DocuSignXmlns())
-        //                  .Elements(ItemTagName.DocuSignXmlns())
-        //                  .Select(e => new T { Element = e, });
-        //    });
-        //}
-        internal EnumerableResponse(string baseUrl, IEnumerable<Requests.Request> requests, string collectionTagName, string itemTagName, Verb verb, string authentication)
+		internal EnumerableResponse(string baseUrl, IEnumerable<Request> requests, string collectionTagName, string itemTagName, Verb verb, string authentication, string nameSpace = null)
                  : base(verb, authentication)
         { }
 
-        public EnumerableResponse(XElement parent, string collectionTagName, string itemTagName) 
+        public EnumerableResponse(XElement parent, string collectionTagName, string itemTagName, string nameSpace = null) 
         {
             CollectionTagName = collectionTagName;
             ItemTagName = itemTagName;
 
             _Collection = new Lazy<IEnumerable<T>>(() =>
             {
-                var collectionelement = parent.Element(CollectionTagName.DocuSignXmlns());
+                var collectionelement = parent.Element(CollectionTagName.Xmlns(nameSpace));
 
                 if (collectionelement == null)
                     return new List<T>().AsReadOnly();
                 else
                     return parent
-                          .Element(CollectionTagName.DocuSignXmlns())
-                          .Elements(ItemTagName.DocuSignXmlns())
+                          .Element(CollectionTagName.Xmlns(nameSpace))
+                          .Elements(ItemTagName.Xmlns(nameSpace))
                           .Select(e => new T { Element = e, });
             });
         }

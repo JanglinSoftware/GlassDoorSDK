@@ -10,9 +10,9 @@ namespace Janglin.RestApiSdk.Xml
     public abstract class Response
     {
         public Response() { }
-        internal Response(XElement parent, string tagName)
+        internal Response(XElement parent, string tagName, string nameSpace = null)
         {
-            Element = parent.Element(tagName.DocuSignXmlns());
+            Element = parent.Element(tagName.Xmlns(nameSpace));
         }
         internal Response(Verb verb, string authentication)
         {
@@ -20,7 +20,7 @@ namespace Janglin.RestApiSdk.Xml
             Verb = verb;
         }
 
-        protected void RunVerb(string Url, Requests.Request request = null)
+        protected void RunVerb(string Url, Request request = null)
         {
             switch (Verb)
             {
@@ -82,7 +82,7 @@ namespace Janglin.RestApiSdk.Xml
                     .Select(e => e as WebException);
 
                 if (webexceptions.Count() > 0)
-                    throw new DocuSignException(webexceptions.First());
+                    throw new RestException(webexceptions.First());
                 else
                     throw;
             }
@@ -101,7 +101,7 @@ namespace Janglin.RestApiSdk.Xml
             return await request.GetResponseAsync();
         }
 
-        protected async Task<WebResponse> PostAsync(string url, Requests.Request requestbody)
+        protected async Task<WebResponse> PostAsync(string url, Request requestbody)
         {
             var request = (HttpWebRequest)WebRequest.Create(url);
 
