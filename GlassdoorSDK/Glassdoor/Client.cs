@@ -35,7 +35,7 @@ namespace Janglin.Glassdoor.Client.Classic
 		/// <param name="returnEmployers">Results will include job data broken down by employer.</param>
 		/// <param name="admLevelRequested">Geographic district type requested when returnStates is true (1 = states, 2 = counties)</param>
 		/// <returns></returns>
-		public Responses.JobStats GetJobs(string callback,
+		public Responses.JobsStats GetJobs(string callback,
 			string queryPhrase,
 			string employer,
 			string location,
@@ -43,18 +43,18 @@ namespace Janglin.Glassdoor.Client.Classic
 			string state,
 			string country,
 			string fromAgeDays,
-			JobType jobType,
-			byte minRating,
-			int radius,
+			JobType? jobType,
+			byte? minRating,
+			int? radius,
 			string jobTitle,
-			JobCategory jobCategory,
+			JobCategory? jobCategory,
 			string returnCities,
 			string returnStates,
 			string returnJobTitles,
 			string returnEmployers,
-			byte admLevelRequested)
+			byte? admLevelRequested)
 		{
-			return new Responses.JobStats(PartnerId,
+			return new Responses.JobsStats(PartnerId,
 				Key,
 				callback, 
 				queryPhrase, 
