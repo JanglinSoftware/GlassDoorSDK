@@ -40,6 +40,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Json\Request.cs" />
+    <Compile Include="Json\Response.cs" />
+    <Compile Include="Request.cs" />
+    <Compile Include="Response.cs" />
     <Compile Include="RestException.cs" />
     <Compile Include="Extentions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -65,9 +69,7 @@
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Json\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

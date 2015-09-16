@@ -6,11 +6,11 @@ using System.Xml.Linq;
 
 namespace Janglin.RestApiSdk.Xml
 {
-	public class Request
+	public class Request: RestApiSdk.Request
 	{
 		public string XmlNamespace { get; set; }
 
-		internal byte[] ByteArrayBuffer { get { return Encoding.ASCII.GetBytes(ToXml().ToString()); } }
+		protected internal override byte[] ByteArrayBuffer { get { return Encoding.ASCII.GetBytes(ToXml().ToString()); } }
 
 		internal virtual IEnumerable<XElement> ToXml()
 		{
