@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.23107.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Glassdoor", "Glassdoor\Glassdoor.csproj", "{D4AD4545-EE8F-4B05-895F-2D9351DACF1B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GlassdoorUnitTest", "GlassdoorUnitTest\GlassdoorUnitTest.csproj", "{F246BC6B-2A65-4607-AB19-A27B672A8AA8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RestApiSdk", "RestApiSdk\RestApiSdk.csproj", "{846E01C7-D607-453A-922F-E38216AFC17C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D4AD4545-EE8F-4B05-895F-2D9351DACF1B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D4AD4545-EE8F-4B05-895F-2D9351DACF1B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D4AD4545-EE8F-4B05-895F-2D9351DACF1B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D4AD4545-EE8F-4B05-895F-2D9351DACF1B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F246BC6B-2A65-4607-AB19-A27B672A8AA8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F246BC6B-2A65-4607-AB19-A27B672A8AA8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F246BC6B-2A65-4607-AB19-A27B672A8AA8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F246BC6B-2A65-4607-AB19-A27B672A8AA8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{846E01C7-D607-453A-922F-E38216AFC17C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{846E01C7-D607-453A-922F-E38216AFC17C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{846E01C7-D607-453A-922F-E38216AFC17C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{846E01C7-D607-453A-922F-E38216AFC17C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
