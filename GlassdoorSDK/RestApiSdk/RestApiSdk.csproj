@@ -7,7 +7,7 @@
     <ProjectGuid>{846E01C7-D607-453A-922F-E38216AFC17C}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>RestApiSdk</RootNamespace>
+    <RootNamespace>Janglin.RestApiSdk</RootNamespace>
     <AssemblyName>RestApiSdk</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
@@ -47,6 +47,9 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
+    <Compile Include="Xml\EnumerableResponse.cs" />
+    <Compile Include="Xml\ItemResponse.cs" />
+    <Compile Include="Xml\Response.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
@@ -54,6 +57,9 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Json\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

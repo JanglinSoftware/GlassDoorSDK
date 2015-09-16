@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace RestApiSdk.Properties {
+namespace Janglin.RestApiSdk.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
