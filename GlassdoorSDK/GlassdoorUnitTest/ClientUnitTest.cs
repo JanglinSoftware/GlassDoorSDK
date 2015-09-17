@@ -11,31 +11,35 @@ namespace GlassdoorUnitTest
         const string Key = "iuYKOFxTrMe";
 
         [TestMethod]
-        public void JobStatsTestMethod()
+        public void JobStatsEmployerTestMethod()
         {
 			var client = new Client(PartnerId, Key);
 
-			var jobstats = client.GetJobs(
-				null, 
-				null, 
-				null, 
-				null, 
-				null, 
-				null, 
-				null, 
-				null, 
-				null,
-				null,
-				null, 
-				null, 
-				null, 
-				null, 
-				null, 
-				null, 
-				null, 
-				null);
+			var jobstats = client.GetJobsStatsAsync(callback: null,
+				queryPhrase: null,
+				employer: null,
+				location:null,
+				city: null,
+				state:null,
+				country:null,
+				fromAgeDays:null,
+				jobType:null,
+				minRating:null,
+				radius:null,
+				jobTitle:null,
+				jobCategory:null,
+				returnCities:null,
+				returnStates:true,
+				returnJobTitles:null,
+				returnEmployers:null,
+				admLevelRequested:1
+				//userIp:
+				//userAgent:
+				);
 
-			var something = jobstats.Test;
+			jobstats.Wait();
+
+			var something = jobstats.Result;
         }
     }
 }

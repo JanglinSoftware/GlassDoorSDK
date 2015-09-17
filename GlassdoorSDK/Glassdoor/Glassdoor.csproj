@@ -53,7 +53,10 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
+    <Compile Include="Responses\City.cs" />
     <Compile Include="Responses\JobsStats.cs" />
+    <Compile Include="Responses\Response.cs" />
+    <Compile Include="Responses\State.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />

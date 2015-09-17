@@ -32,37 +32,48 @@ namespace Janglin.RestApiSdk
             else
                 return String.Concat(value, "/", String.Join("/", subRoutes));
         }
-        static internal string Parameters(this string value, params string[] nameValuePairs)
-        {
-            if (nameValuePairs == null) throw new ArgumentNullException("nameValuePairs", "Parameter is null");
-            if (nameValuePairs.Length % 2 != 0) throw new ArgumentException("There must be an even number of Name/Value Pair parameters.", "nameValuePairs");
 
-            if (nameValuePairs != null && nameValuePairs.Length > 0)
-            {
-                var output = new StringBuilder(value);
+		/// <summary>Creates a URL parameter string.</summary>
+		/// <param name="urlbase">URL base string on which to append the resulting parameter string.</param>
+		/// <param name="nameValuePairs">A list of Name/Value pairs representing the parameter names and values which to append to the target URL base string.
+		/// If the name parameter of a name/value pair is null, empty or whitespace, that name and its corresponding value will be left out of the result.
+		/// If the value parameter of a name/value pair is null, that name and its corresponding value will be left out of the result.
+		/// If the value parameter of a name/value pair is empty or whitespace, then its corresponding parameter name will be included but set equal to and empty string.
+		/// <code>http://base.url?name1=value1&name2=&name3=value3</code> The name2 parameter equals nothing.</param>
+		/// <returns>The complete URL string with the base URL string appended with the parameters.</returns>
+		/// <exception cref="ArgumentNullException">The <paramref name="nameValuePairs"/> parameter cannot be null.</exception>
+		/// <exception cref="ArgumentException">There must be an even number of <paramref name="nameValuePairs"/> parameters.</exception>
+		static internal string Parameters(this string urlbase, params string[] nameValuePairs)
+		{
+			if (nameValuePairs == null) throw new ArgumentNullException("nameValuePairs", "Parameter is null");
+			if (nameValuePairs.Length % 2 != 0) throw new ArgumentException("There must be an even number of Name/Value Pair parameters.", "nameValuePairs");
 
-                var list = new List<string>();
+			if (nameValuePairs != null && nameValuePairs.Length > 0)
+			{
+				var output = new StringBuilder(urlbase);
 
-                for (var i = 0; i < nameValuePairs.Length - 1; i += 2)
-                {
-                    if (!String.IsNullOrWhiteSpace(nameValuePairs[i])
-                        && !String.IsNullOrWhiteSpace(nameValuePairs[i + 1]))
-                    {
-                        list.Add(String.Format("{0}={1}", nameValuePairs[i], nameValuePairs[i + 1]));
-                    }
-                }
+				var list = new List<string>();
 
-                if (list.Count > 0)
-                {
-                    output.Append('?');
-                    output.Append(String.Join("&", list));
-                }
+				for (var i = 0; i < nameValuePairs.Length - 1; i += 2)
+				{
+					var name = nameValuePairs[i];
+					var value = nameValuePairs[i + 1];
 
-                return output.ToString();
-            }
-            else
-                return value;
-        }
+					if (!String.IsNullOrWhiteSpace(name) && value != null)
+						list.Add(String.Format("{0}={1}", name.Trim(), value.Trim()));
+				}
+
+				if (list.Count > 0)
+				{
+					output.Append('?');
+					output.Append(String.Join("&", list));
+				}
+
+				return output.ToString();
+			}
+			else
+				return urlbase;
+		}
 
         static internal string ToLowerString(this bool value) { return value.ToString().ToLowerInvariant(); }
 
