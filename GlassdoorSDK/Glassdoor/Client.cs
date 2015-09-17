@@ -18,6 +18,7 @@ namespace Janglin.Glassdoor.Client.Classic
 
 		public string Key { get; private set; }
 		public string PartnerId { get; private set; }
+        public string UserIp { get; private set; }
 
 		/// <summary>A jobs stats request must specify "jobs-stats" for the action parameter in addition to the other required parameters, and then can optionally scope the search using the parameters below.</summary>
 		/// <remarks>See: http://www.glassdoor.com/api/jobsApiActions.htm </remarks>
@@ -205,12 +206,27 @@ namespace Janglin.Glassdoor.Client.Classic
 						//	Data.Add(ErrorDetailsKey, responsetext);
 					}
 					finally
-					{
-						reader.DiscardBufferedData();
-						reader.Dispose();
-					}
-				}
-			}
+		{
+			return new Responses.JobsStats(PartnerId,
+				Key,
+				callback, 
+				queryPhrase, 
+				employer, 
+				location, 
+				city, 
+				state, 
+				country, 
+				fromAgeDays, 
+				jobType, 
+				minRating, 
+				radius, 
+				jobTitle, 
+				jobCategory, 
+				returnCities, 
+				returnStates, 
+				returnJobTitles, 
+				returnEmployers, 
+				admLevelRequested);
 		}
 	}
 }

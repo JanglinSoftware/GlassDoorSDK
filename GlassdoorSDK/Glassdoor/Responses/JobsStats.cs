@@ -13,11 +13,42 @@ namespace Responses
 		[JsonProperty("attributionURL")]
 		public string AttributionUrl { get; private set; }
 
-		[JsonProperty("countsReturned")]
-		public int CountsReturned { get; private set; }
+			RunVerb(url);
+		}
 
-		[JsonProperty("cities")]
-		public IEnumerable<City> Cities { get; private set; }
+		public object Test
+		{
+			get
+			{
+				try
+				{
+					WebResponseTask.Wait();
+
+					return WebResponseTask.Result;
+				}
+				catch (AggregateException ex)
+				{
+					var webex = ex.InnerException as WebException;
+
+					if (webex != null) {
+						HandleWebException(webex);
+
+
+					}
+
+				}
+
+				throw new NotImplementedException();
+			}
+		}
+
+		private void HandleWebException(WebException ex)
+		{
+			var httpresponse = (HttpWebResponse)ex.Response;
+
+			if (httpresponse != null)
+			{
+				System.Diagnostics.Debug.WriteLine("Error code: {0}", httpresponse.StatusCode);
 
 		[JsonProperty("states")]
 		public IDictionary<string, State> States { get; private set; }
