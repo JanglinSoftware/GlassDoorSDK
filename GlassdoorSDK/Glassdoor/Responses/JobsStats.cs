@@ -20,7 +20,13 @@ namespace Responses
 		public IEnumerable<City> Cities { get; private set; }
 
 		[JsonProperty("states")]
-		public IEnumerable<State> States { get; private set; }
+		public IDictionary<string, State> States { get; private set; }
+
+		[JsonProperty("jobTitles")]
+		public IEnumerable<JobTitle> JobTitles { get; private set; }
+
+		[JsonProperty("employers")]
+		public IEnumerable<Employer> Employers { get; private set; }
 
 	}
 }

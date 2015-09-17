@@ -17,9 +17,9 @@ namespace Responses
 		public decimal Score { get; private set; }
 
 		[JsonProperty("latitude")]
-		public decimal Latitude { get; private set; }
+		public decimal? Latitude { get; private set; }
 
 		[JsonProperty("longitude")]
-		public decimal Longitude { get; private set; }
+		public decimal? Longitude { get; private set; }
 	}
 }
