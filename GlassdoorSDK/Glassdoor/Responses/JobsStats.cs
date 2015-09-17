@@ -55,6 +55,8 @@ namespace Responses
 				"returnEmployers", returnEmployers,
 				"admLevelRequested", admLevelRequested.ToString());
 
+            var result Response.ParseResponse<JobsStats>();
+
 			RunVerb(url);
 		}
 
@@ -62,6 +64,7 @@ namespace Responses
 		{
 			get
 			{
+                var something = Object;
 				try
 				{
 					WebResponseTask.Wait();
