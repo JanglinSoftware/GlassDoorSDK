@@ -44,10 +44,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Ceo.cs" />
     <Compile Include="Client.cs" />
+    <Compile Include="DetailedEmployer.cs" />
+    <Compile Include="FeaturedReview.cs" />
     <Compile Include="GlassdoorException.cs" />
+    <Compile Include="Image.cs" />
     <Compile Include="JobCategory.cs" />
     <Compile Include="JobType.cs" />
+    <Compile Include="NextJob.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
