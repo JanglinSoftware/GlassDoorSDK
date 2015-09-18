@@ -1,6 +1,7 @@
 ﻿using Janglin.RestApiSdk;
 using Newtonsoft.Json;
 using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Net;
@@ -67,7 +68,7 @@ namespace Janglin.Glassdoor.Client
 				"format", "json",
 				"t.p", PartnerId,
 				"t.k", Key,
-				"userip", userIp = String.IsNullOrWhiteSpace(userIp) ? UserIp : "0.0.0.0",
+				"userip", String.IsNullOrWhiteSpace(userIp) ? UserIp : "0.0.0.0",
 				"useragent", userAgent,
 				"callback", callback,
 				"q", queryPhrase,
@@ -108,7 +109,7 @@ namespace Janglin.Glassdoor.Client
 				"format", "json",
 				"t.p", PartnerId,
 				"t.k", Key,
-				"userip", userIp = String.IsNullOrWhiteSpace(userIp) ? UserIp : "0.0.0.0",
+				"userip", String.IsNullOrWhiteSpace(userIp) ? UserIp : "0.0.0.0",
 				"useragent", userAgent,
 				"callback", callBack,
 				"jobTitle", jobTitle,
@@ -117,7 +118,7 @@ namespace Janglin.Glassdoor.Client
 			return await GetAsync<JobsProgression>(url);
 		}
 
-		public async Task<DetailedEmployer> GetCompanies(int pageNumber = 1,
+		public async Task<CompanySearchResult> GetCompaniesAsync(int pageNumber = 1,
 			int pageSize = 20,
 			string queryPhrase = null,
 			string location = null,
@@ -133,91 +134,44 @@ namespace Janglin.Glassdoor.Client
 				"format", "json",
 				"t.p", PartnerId,
 				"t.k", Key,
-				"userip", userIp = String.IsNullOrWhiteSpace(userIp) ? UserIp : "0.0.0.0",
+				"userip", String.IsNullOrWhiteSpace(userIp) ? UserIp : "0.0.0.0",
 				"useragent", userAgent,
 				"queryPhrase", callBack,
 				"location", location,
 				"city", city.ToStringIfNotNull(),
 				"state", state.ToStringIfNotNull(),
-				"country", country.ToStringIfNotNull());
+				"country", country.ToStringIfNotNull(),
+				"pn", pageNumber.ToStringIfNotNull(),
+				"ps", pageSize.ToStringIfNotNull());
 
-			return await GetAsync<DetailedEmployer>(url);
+			return await WebRequester.GetAsync<CompanySearchResult>(url);
 		}
 
-
-
-		static string ParseResponse(WebResponse webResponse)
+		public IEnumerable<DetailedEmployer> GetCompanies(string queryPhrase = null,
+			string location = null,
+			int? city = null,
+			int? state = null,
+			int? country = null,
+			string userIp = null,
+			string userAgent = "",
+			string callBack = null)
 		{
-			try
-			{
-				using (var datastream = webResponse.GetResponseStream())
-				{
-					using (var reader = new StreamReader(datastream))
-					{
-						var value = reader.ReadToEnd();
-						return value;
-					}
-				}
-			}
-			catch (AggregateException ex)
-			{
-				var webexceptions = ex.InnerExceptions
-					.Where(e => e.GetType().Equals(typeof(WebException)))
-					.Select(e => e as WebException);
+			var url = "http://api.glassdoor.com/api/api.htm".Parameters("action", "employers",
+				"v", "1",
+				"format", "json",
+				"t.p", PartnerId,
+				"t.k", Key,
+				"userip", String.IsNullOrWhiteSpace(userIp) ? UserIp : "0.0.0.0",
+				"useragent", userAgent,
+				"queryPhrase", callBack,
+				"location", location,
+				"city", city.ToStringIfNotNull(),
+				"state", state.ToStringIfNotNull(),
+				"country", country.ToStringIfNotNull(),
+				"pn", "{0}",
+				"ps", "{1}");
 
-				if (webexceptions.Count() > 0)
-					throw new RestException(webexceptions.First());
-				else
-					throw;
-			}
-			finally { webResponse.Dispose(); }
-		}
-
-		static async Task<T> GetAsync<T>(string url) where T : class
-		{
-			var request = (HttpWebRequest)WebRequest.Create(url);
-
-			request.Method = "GET";
-			//request.ContentType = "application/json";
-			//request.Accept = "application/json";
-
-			var response = await request.GetResponseAsync();
-
-			var result = ParseResponse(response);
-
-			var jsonresponse = JsonConvert.DeserializeObject<TypedResponse<T>>(result);
-
-			if (jsonresponse.Success)
-				return jsonresponse.Information as T;
-			else
-				throw new GlassdoorException(jsonresponse);
-
-		}
-
-		void HandleWebException(WebException ex)
-		{
-			var httpresponse = (HttpWebResponse)ex.Response;
-
-			if (httpresponse != null)
-			{
-				System.Diagnostics.Debug.WriteLine("Error code: {0}", httpresponse.StatusCode);
-
-				var data = httpresponse.GetResponseStream();
-
-				if (data != null && data.CanRead)
-				{
-					var reader = new StreamReader(data);
-
-					try
-					{
-						var responsetext = reader.ReadToEnd();
-
-						//if (!String.IsNullOrWhiteSpace(responsetext))
-						//	Data.Add(ErrorDetailsKey, responsetext);
-					}
-					finally { if (reader != null) reader.Dispose(); }
-				}
-			}
+			return new PagedResult<DetailedEmployer>(url);
 		}
 	}
 }

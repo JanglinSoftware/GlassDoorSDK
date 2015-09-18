@@ -11,37 +11,37 @@ namespace Janglin.Glassdoor.Client
 		public string Website { get; private set; }
 
 		[JsonProperty("isEEP")]
-		public string IsEEP { get; private set; }
+		public bool IsEEP { get; private set; }
 
 		[JsonProperty("exactMatch")]
-		public string ExactMatch { get; private set; }
+		public bool ExactMatch { get; private set; }
 
 		[JsonProperty("industry")]
 		public string Industry { get; private set; }
 
 		[JsonProperty("numberOfRatings")]
-		public string NumberOfRatings { get; private set; }
+		public int NumberOfRatings { get; private set; }
 
 		[JsonProperty("overallRating")]
-		public string OverallRating { get; private set; }
+		public decimal OverallRating { get; private set; }
 
 		[JsonProperty("ratingDescription")]
 		public string RatingDescription { get; private set; }
 
 		[JsonProperty("cultureAndValuesRating")]
-		public string CultureAndValuesRating { get; private set; }
+		public decimal CultureAndValuesRating { get; private set; }
 
 		[JsonProperty("seniorLeadershipRating")]
-		public string SeniorLeadershipRating { get; private set; }
+		public decimal SeniorLeadershipRating { get; private set; }
 
 		[JsonProperty("compensationAndBenefitsRating")]
-		public string CompensationAndBenefitsRating { get; private set; }
+		public decimal CompensationAndBenefitsRating { get; private set; }
 
 		[JsonProperty("careerOpportunitiesRating")]
-		public string CareerOpportunitiesRating { get; private set; }
+		public decimal CareerOpportunitiesRating { get; private set; }
 
 		[JsonProperty("workLifeBalanceRating")]
-		public string WorkLifeBalanceRating { get; private set; }
+		public decimal WorkLifeBalanceRating { get; private set; }
 
 		[JsonProperty("featuredReview")]
 		public FeaturedReview FeaturedReview { get; private set; }

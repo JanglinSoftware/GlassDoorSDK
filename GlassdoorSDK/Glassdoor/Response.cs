@@ -2,13 +2,13 @@
 
 namespace Janglin.Glassdoor.Client
 {
-	public class TypedResponse<T> : Response
+	internal class TypedResponse<T> : Response
 	{
 		[JsonProperty("response")]
 		public T Information { get; private set; }
 	}
 
-	public class Response
+	internal class Response
 	{
 		[JsonProperty("success")]
 		public bool Success { get; private set; }

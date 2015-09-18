@@ -1,31 +1,32 @@
 ﻿using Newtonsoft.Json;
+using System;
 
 namespace Janglin.Glassdoor.Client
 {
 	public class FeaturedReview
 	{
 		[JsonProperty("id")]
-		public string id { get; private set; }
+		public int Id { get; private set; }
 
 		[JsonProperty("currentJob")]
-		public string currentJob { get; private set; }
+		public string CurrentJob { get; private set; }
 
 		[JsonProperty("reviewDateTime")]
-		public string reviewDateTime { get; private set; }
+		public DateTime ReviewDateTime { get; private set; }
 
 		[JsonProperty("jobTitle")]
-		public string jobTitle { get; private set; }
+		public string JobTitle { get; private set; }
 
 		[JsonProperty("location")]
-		public string location { get; private set; }
+		public string Location { get; private set; }
 
 		[JsonProperty("headline")]
-		public string headline { get; private set; }
+		public string Headline { get; private set; }
 
 		[JsonProperty("pros")]
-		public string pros { get; private set; }
+		public string Pros { get; private set; }
 
 		[JsonProperty("cons")]
-		public string cons { get; private set; }
+		public string Cons { get; private set; }
 	}
 }

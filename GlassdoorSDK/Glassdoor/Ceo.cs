@@ -5,21 +5,21 @@ namespace Janglin.Glassdoor.Client
 	public class Ceo
 	{
 		[JsonProperty("name")]
-		public string name { get; private set; }
+		public string Name { get; private set; }
 
 		[JsonProperty("title")]
-		public string title { get; private set; }
+		public string Title { get; private set; }
 
 		[JsonProperty("numberOfRatings")]
-		public string numberOfRatings { get; private set; }
+		public int NumberOfRatings { get; private set; }
 
 		[JsonProperty("pctApprove")]
-		public string pctApprove { get; private set; }
+		public decimal ApprovalPercentage { get; private set; }
 
 		[JsonProperty("pctDisapprove")]
-		public string pctDisapprove { get; private set; }
+		public decimal DisapprovalPercentage { get; private set; }
 
 		[JsonProperty("image")]
-		public Image image { get; private set; }
+		public Image Image { get; private set; }
 	}
 }
