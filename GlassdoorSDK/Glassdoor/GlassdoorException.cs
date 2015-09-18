@@ -1,8 +1,7 @@
 ﻿using System;
 using System.Runtime.Serialization;
-using Responses;
 
-namespace Janglin.Glassdoor.Client.Classic
+namespace Janglin.Glassdoor.Client
 {
     [Serializable]
     internal class GlassdoorException : Exception

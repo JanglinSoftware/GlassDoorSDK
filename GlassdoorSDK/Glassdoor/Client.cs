@@ -6,7 +6,7 @@ using System.Linq;
 using System.Net;
 using System.Threading.Tasks;
 
-namespace Janglin.Glassdoor.Client.Classic
+namespace Janglin.Glassdoor.Client
 {
     public class Client
     {
@@ -41,7 +41,7 @@ namespace Janglin.Glassdoor.Client.Classic
         /// <param name="returnEmployers">Results will include job data broken down by employer.</param>
         /// <param name="admLevelRequested">Geographic district type requested when returnStates is true (1 = states, 2 = counties)</param>
         /// <returns></returns>
-        public async Task<Responses.JobsStats> GetJobsStatsAsync(string callback = null,
+        public async Task<JobsStats> GetJobsStatsAsync(string callback = null,
             string queryPhrase = null,
             int? employer = null,
             string location = null,
@@ -90,15 +90,15 @@ namespace Janglin.Glassdoor.Client.Classic
             var response = await RunVerbAsync(url, Verb.Get);
             var result = ParseResponse(response);
 
-            var json = JsonConvert.DeserializeObject<Responses.Response<Responses.JobsStats>>(result);
+            var json = JsonConvert.DeserializeObject<Response<JobsStats>>(result);
 
             if (json.Success)
-                return json.Information as Responses.JobsStats;
+                return json.Information as JobsStats;
             else
                 throw new GlassdoorException(json);
         }
 
-        public async Task<Responses.JobsProgression> GetJobProgressionAsync(string jobTitle,
+        public async Task<JobsProgression> GetJobProgressionAsync(string jobTitle,
             string userip = "0.0.0.0",
             string userAgent = "",
             string callBack = null,
@@ -119,10 +119,10 @@ namespace Janglin.Glassdoor.Client.Classic
             var response = await RunVerbAsync(url, Verb.Get);
             var result = ParseResponse(response);
 
-            var json = JsonConvert.DeserializeObject<Responses.Response<Responses.JobsProgression>>(result);
+            var json = JsonConvert.DeserializeObject<Response<JobsProgression>>(result);
 
             if (json.Success)
-                return json.Information as Responses.JobsProgression;
+                return json.Information as JobsProgression;
             else
                 throw new GlassdoorException(json);
         }

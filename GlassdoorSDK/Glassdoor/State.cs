@@ -1,6 +1,6 @@
 ﻿using Newtonsoft.Json;
 
-namespace Responses
+namespace Janglin.Glassdoor.Client
 {
 	public class State
 	{

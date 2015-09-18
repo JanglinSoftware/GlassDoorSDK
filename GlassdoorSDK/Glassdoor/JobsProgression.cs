@@ -1,4 +1,4 @@
-﻿namespace Responses
+﻿namespace Janglin.Glassdoor.Client
 {
     public class JobsProgression
     {

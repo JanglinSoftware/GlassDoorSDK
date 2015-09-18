@@ -1,4 +1,4 @@
-﻿namespace Janglin.Glassdoor.Client.Classic
+﻿namespace Janglin.Glassdoor.Client
 {
 	public enum JobCategory
 	{

@@ -7,7 +7,7 @@
     <ProjectGuid>{D4AD4545-EE8F-4B05-895F-2D9351DACF1B}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Janglin.Glassdoor.Client.Classic</RootNamespace>
+    <RootNamespace>Janglin.Glassdoor.Client</RootNamespace>
     <AssemblyName>JanglinGlassdoor</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
@@ -54,13 +54,13 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
-    <Compile Include="Responses\City.cs" />
-    <Compile Include="Responses\Employer.cs" />
-    <Compile Include="Responses\JobsProgression.cs" />
-    <Compile Include="Responses\JobsStats.cs" />
-    <Compile Include="Responses\JobTitle.cs" />
-    <Compile Include="Responses\Response.cs" />
-    <Compile Include="Responses\State.cs" />
+    <Compile Include="City.cs" />
+    <Compile Include="Employer.cs" />
+    <Compile Include="JobsProgression.cs" />
+    <Compile Include="JobsStats.cs" />
+    <Compile Include="JobTitle.cs" />
+    <Compile Include="Response.cs" />
+    <Compile Include="State.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />

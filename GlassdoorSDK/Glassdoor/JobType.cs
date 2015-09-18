@@ -1,4 +1,4 @@
-﻿namespace Janglin.Glassdoor.Client.Classic
+﻿namespace Janglin.Glassdoor.Client
 {
 	/// <summary>Scope the search to certain job types.</summary>
 	public enum JobType
