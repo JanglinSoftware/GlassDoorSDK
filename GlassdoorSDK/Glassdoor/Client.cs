@@ -87,15 +87,7 @@ namespace Janglin.Glassdoor.Client
                 "returnEmployers", returnEmployers.ToStringIfNotNull(),
                 "admLevelRequested", admLevelRequested.ToStringIfNotNull());
 
-            var response = await RunVerbAsync(url, Verb.Get);
-            var result = ParseResponse(response);
-
-            var json = JsonConvert.DeserializeObject<Response<JobsStats>>(result);
-
-            if (json.Success)
-                return json.Information as JobsStats;
-            else
-                throw new GlassdoorException(json);
+            return await GetAsync<JobsStats>(url);
         }
 
         public async Task<JobsProgression> GetJobProgressionAsync(string jobTitle,
@@ -116,18 +108,10 @@ namespace Janglin.Glassdoor.Client
                 "jobTitle", jobTitle,
                 "countryId", 1.ToStringIfNotNull());
 
-            var response = await RunVerbAsync(url, Verb.Get);
-            var result = ParseResponse(response);
+			return await GetAsync<JobsProgression>(url);
+		}
 
-            var json = JsonConvert.DeserializeObject<Response<JobsProgression>>(result);
-
-            if (json.Success)
-                return json.Information as JobsProgression;
-            else
-                throw new GlassdoorException(json);
-        }
-
-        static string ParseResponse(WebResponse webResponse)
+		static string ParseResponse(WebResponse webResponse)
         {
             try
             {
@@ -155,24 +139,24 @@ namespace Janglin.Glassdoor.Client
         }
 
 
-        async Task<WebResponse> RunVerbAsync(string Url, Verb verb, Request request = null)
-        {
-            switch (verb)
-            {
-                case Verb.Get:
-                    return await GetAsync(Url);
-                case Verb.Post:
-                    return await PostAsync(Url, request);
-                case Verb.Put:
-                    throw new NotImplementedException();
-                case Verb.Delete:
-                    throw new NotImplementedException();
-                default:
-                    throw new ArgumentOutOfRangeException();
-            }
-        }
+        //async Task<WebResponse> RunVerbAsync(string Url, Verb verb, Request request = null)
+        //{
+        //    switch (verb)
+        //    {
+        //        case Verb.Get:
+        //            return await GetAsync(Url);
+        //        case Verb.Post:
+        //            return await PostAsync(Url, request);
+        //        case Verb.Put:
+        //            throw new NotImplementedException();
+        //        case Verb.Delete:
+        //            throw new NotImplementedException();
+        //        default:
+        //            throw new ArgumentOutOfRangeException();
+        //    }
+        //}
 
-        protected async Task<WebResponse> GetAsync(string url)
+        protected async Task<T> GetAsync<T>(string url) where T :class
         {
             var request = (HttpWebRequest)WebRequest.Create(url);
 
@@ -180,10 +164,20 @@ namespace Janglin.Glassdoor.Client
             //request.ContentType = "application/json";
             //request.Accept = "application/json";
 
-            return await request.GetResponseAsync();
-        }
+            var response =await request.GetResponseAsync();
 
-        protected async Task<WebResponse> PostAsync(string url, Request requestbody)
+			var result = ParseResponse(response);
+
+			var json = JsonConvert.DeserializeObject<Response<T>>(result);
+
+			if (json.Success)
+				return json.Information as T;
+			else
+				throw new GlassdoorException<T>(json);
+
+		}
+
+		protected async Task<WebResponse> PostAsync(string url, Request requestbody)
         {
             var request = (HttpWebRequest)WebRequest.Create(url);
 

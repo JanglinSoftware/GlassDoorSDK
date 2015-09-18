@@ -1,7 +1,6 @@
-﻿using System;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Janglin.Glassdoor.Client.Classic;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Linq;
+using Janglin.Glassdoor.Client;
 
 namespace GlassdoorUnitTest
 {
@@ -146,7 +145,7 @@ namespace GlassdoorUnitTest
         [TestMethod]
         public void JobStatsExceptionTestMethod()
         {
-            var client = new Client(PartnerId, Key);
+            var client = new Client("", Key);
 
             var jobstats = client.GetJobsStatsAsync(state: -1);
 
