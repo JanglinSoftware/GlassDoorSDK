@@ -45,6 +45,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Client.cs" />
+    <Compile Include="GlassdoorException.cs" />
     <Compile Include="JobCategory.cs" />
     <Compile Include="JobType.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -55,6 +56,7 @@
     </Compile>
     <Compile Include="Responses\City.cs" />
     <Compile Include="Responses\Employer.cs" />
+    <Compile Include="Responses\JobsProgression.cs" />
     <Compile Include="Responses\JobsStats.cs" />
     <Compile Include="Responses\JobTitle.cs" />
     <Compile Include="Responses\Response.cs" />

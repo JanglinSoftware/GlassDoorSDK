@@ -5,7 +5,7 @@ namespace Responses
 	public class JobTitle
 	{
 		[JsonProperty("id")]
-		public string Id { get; private set; }
+		public int Id { get; private set; }
 
 		[JsonProperty("jobTitle")]
 		public string Title { get; private set; }

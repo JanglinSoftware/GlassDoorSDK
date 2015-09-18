@@ -7,19 +7,27 @@ namespace Janglin.RestApiSdk
 {
     public static class Extentions
     {
-		public static string ToStringIfNotNull(this object value)
-		{
-			if (value == null)
-				return null;
-			else
-				return value.ToString();
-		}
+        public static string ToStringIfNotNull(this bool? value)
+        {
+            if (value.HasValue)
+                return value.ToString().ToLowerInvariant();
+            else
+                return null;
+        }
 
-		/// <summary>Generate an XML namespace qualified tag name.</summary>
-		/// <param name="value">Tag name.</param>
-		/// <param name="nameSpace">Optional namespace.</param>
-		/// <returns>The fully qualified tag name as an XName type.</returns>
-		static public XName Xmlns(this string value, string nameSpace = null)
+        public static string ToStringIfNotNull(this object value)
+        {
+            if (value == null)
+                return null;
+            else
+                return value.ToString();
+        }
+
+        /// <summary>Generate an XML namespace qualified tag name.</summary>
+        /// <param name="value">Tag name.</param>
+        /// <param name="nameSpace">Optional namespace.</param>
+        /// <returns>The fully qualified tag name as an XName type.</returns>
+        static public XName Xmlns(this string value, string nameSpace = null)
         {
             if (String.IsNullOrWhiteSpace(nameSpace))
                 return XName.Get(value, Properties.Settings.Default.PrimaryXmlNamespace);

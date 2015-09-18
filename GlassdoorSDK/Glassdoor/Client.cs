@@ -41,24 +41,24 @@ namespace Janglin.Glassdoor.Client.Classic
         /// <param name="returnEmployers">Results will include job data broken down by employer.</param>
         /// <param name="admLevelRequested">Geographic district type requested when returnStates is true (1 = states, 2 = counties)</param>
         /// <returns></returns>
-        public async Task<Responses.JobsStats> GetJobsStatsAsync(string callback,
-            string queryPhrase,
-            int? employer,
-            string location,
-            int? city,
-            string state,
-            string country,
-            string fromAgeDays,
-            JobType? jobType,
-            byte? minRating,
-            int? radius,
-            string jobTitle,
-            JobCategory? jobCategory,
-            bool? returnCities,
-            bool? returnStates,
-            bool? returnJobTitles,
-            bool? returnEmployers,
-            byte? admLevelRequested,
+        public async Task<Responses.JobsStats> GetJobsStatsAsync(string callback = null,
+            string queryPhrase = null,
+            int? employer = null,
+            string location = null,
+            int? city = null,
+            int? state = null,
+            string country = null,
+            string fromAgeDays = null,
+            JobType? jobType = null,
+            byte? minRating = null,
+            int? radius = null,
+            string jobTitle = null,
+            JobCategory? jobCategory = null,
+            bool? returnCities = null,
+            bool? returnStates = null,
+            bool? returnJobTitles = null,
+            bool? returnEmployers = null,
+            byte? admLevelRequested = null,
             string userIp = "0.0.0.0",
             string userAgent = "")
         {
@@ -74,23 +74,57 @@ namespace Janglin.Glassdoor.Client.Classic
                 "e", employer.ToStringIfNotNull(),
                 "l", location,
                 "city", city.ToStringIfNotNull(),
-                "state", state,
+                "state", state.ToStringIfNotNull(),
                 "country", country,
                 "fromAge", fromAgeDays,
-                "jobType", jobType.ToString().ToLowerInvariant(),
-                "minRating", minRating.ToString(),
+                "jobType", jobType.ToStringIfNotNull(),
+                "minRating", minRating.ToStringIfNotNull(),
                 "jt", jobTitle,
-                "jc", jobCategory.ToString().ToLowerInvariant(),
-                "returnCities", returnCities.HasValue ? returnCities.Value.ToLowerString() : null,
-                "returnStates", returnStates.HasValue ? returnStates.Value.ToLowerString() : null,
-                "returnJobTitles", returnJobTitles.HasValue ? returnJobTitles.Value.ToLowerString() : null,
-                "returnEmployers", returnEmployers.HasValue ? returnEmployers.Value.ToLowerString() : null,
-                "admLevelRequested", admLevelRequested.ToString());
+                "jc", jobCategory.ToStringIfNotNull(),
+                "returnCities", returnCities.ToStringIfNotNull(),
+                "returnStates", returnStates.ToStringIfNotNull(),
+                "returnJobTitles", returnJobTitles.ToStringIfNotNull(),
+                "returnEmployers", returnEmployers.ToStringIfNotNull(),
+                "admLevelRequested", admLevelRequested.ToStringIfNotNull());
 
             var response = await RunVerbAsync(url, Verb.Get);
             var result = ParseResponse(response);
 
-            return JsonConvert.DeserializeObject<Responses.Response<Responses.JobsStats>>(result).Information as Responses.JobsStats;
+            var json = JsonConvert.DeserializeObject<Responses.Response<Responses.JobsStats>>(result);
+
+            if (json.Success)
+                return json.Information as Responses.JobsStats;
+            else
+                throw new GlassdoorException(json);
+        }
+
+        public async Task<Responses.JobsProgression> GetJobProgressionAsync(string jobTitle,
+            string userip = "0.0.0.0",
+            string userAgent = "",
+            string callBack = null,
+            int countryId = 1)
+        {
+            var url = "http://api.glassdoor.com/api/api.htm".Parameters("action", "jobs-stats",
+                "v", "1.1",
+                "format", "json",
+                "t.p", PartnerId,
+                "t.k", Key,
+                "userip", UserIp,
+                "useragent", userAgent,
+                "callback", callBack,
+                "action", "jobs-prog",
+                "jobTitle", jobTitle,
+                "countryId", 1.ToStringIfNotNull());
+
+            var response = await RunVerbAsync(url, Verb.Get);
+            var result = ParseResponse(response);
+
+            var json = JsonConvert.DeserializeObject<Responses.Response<Responses.JobsProgression>>(result);
+
+            if (json.Success)
+                return json.Information as Responses.JobsProgression;
+            else
+                throw new GlassdoorException(json);
         }
 
         static string ParseResponse(WebResponse webResponse)

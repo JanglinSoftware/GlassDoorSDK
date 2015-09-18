@@ -21,5 +21,8 @@ namespace Responses
 
 		[JsonProperty("employers")]
 		public IEnumerable<Employer> Employers { get; private set; }
-	}
+
+        [JsonProperty("cities")]
+        public IEnumerable<City> Cities { get; private set; }
+    }
 }

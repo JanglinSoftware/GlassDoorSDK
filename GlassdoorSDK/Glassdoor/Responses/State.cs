@@ -11,7 +11,7 @@ namespace Responses
 		public string Name { get; private set; }
 
 		[JsonProperty("id")]
-		public string Id { get; private set; }
+		public int Id { get; private set; }
 
 		[JsonProperty("score")]
 		public decimal Score { get; private set; }

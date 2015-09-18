@@ -17,7 +17,7 @@ namespace Responses
 		public string StateName{ get; private set; }
 
 		[JsonProperty("id")]
-		public string Id { get; private set; }
+		public int Id { get; private set; }
 
 		[JsonProperty("latitude")]
 		public decimal Latitude{ get; private set; }
