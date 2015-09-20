@@ -1,4 +1,4 @@
-﻿namespace Janglin.Glassdoor.Client
+﻿namespace Janglin.Glassdoor.Api
 {
 	public class Result<T>
 	{

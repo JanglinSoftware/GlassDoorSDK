@@ -6,7 +6,7 @@ using System.Linq;
 using System.Net;
 using System.Threading.Tasks;
 
-namespace Janglin.Glassdoor.Client
+namespace Janglin.Glassdoor.Api
 {
 	internal static class WebRequester
 	{

@@ -1,11 +1,11 @@
-﻿using Janglin.Glassdoor.Client;
+﻿using Janglin.Glassdoor.Api;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Net;
 
-namespace Janglin.Glassdoor.Client
+namespace Janglin.Glassdoor.Api
 {
 	[JsonObject]
 	public class JobsStats 

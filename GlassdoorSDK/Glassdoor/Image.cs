@@ -1,6 +1,6 @@
 ﻿using Newtonsoft.Json;
 
-namespace Janglin.Glassdoor.Client
+namespace Janglin.Glassdoor.Api
 {
 	public class Image
 	{

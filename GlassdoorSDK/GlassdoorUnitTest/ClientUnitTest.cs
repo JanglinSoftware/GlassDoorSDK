@@ -1,6 +1,6 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Linq;
-using Janglin.Glassdoor.Client;
+using Janglin.Glassdoor.Api;
 using System;
 
 namespace GlassdoorUnitTest
@@ -229,11 +229,24 @@ namespace GlassdoorUnitTest
 		}
 
         [TestMethod]
+        public void CompanySearchAsyncTestMethod()
+        {
+            var client = new Client(PartnerId, Key);
+
+            var companiestask = client.GetCompaniesAsync(1, 50);
+            companiestask.Wait();
+            var companies = companiestask.Result;
+
+            foreach (var company in companies)
+                System.Diagnostics.Debug.WriteLine(company.Name);
+        }
+
+        [TestMethod]
         public void CompanySearchTestMethod()
         {
             var client = new Client(PartnerId, Key);
 
-             var companies = client.GetCompanies();
+            var companies = client.GetCompanies();
 
             foreach (var company in companies)
                 System.Diagnostics.Debug.WriteLine(company.Name);

@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Janglin.Glassdoor.Client
+namespace Janglin.Glassdoor.Api
 {
 	[Serializable]
 	public class GlassdoorException : Exception

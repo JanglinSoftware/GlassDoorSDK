@@ -2,7 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 
-namespace Janglin.Glassdoor.Client
+namespace Janglin.Glassdoor.Api
 {
     internal class PagedResult<C, I> : Result<C>, IEnumerable<I>
         where C : PagedTypedResponse<I>, IEnumerable<I>
