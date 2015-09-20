@@ -4,23 +4,27 @@ using System.Collections.Generic;
 
 namespace Janglin.Glassdoor.Client
 {
-	internal class PagedResult<T> : Result<T>, IEnumerable<T> where T :class
-	{
-		string _Url;
+    internal class PagedResult<C, I> : Result<C>, IEnumerable<I>
+        where C : PagedTypedResponse<I>, IEnumerable<I>
+        where I : class
+    {
+        string _Url;
+        int _PageSize = 50;
+        int _PageNumber = 0;
 
-		public PagedResult(string url)
-		{
-			_Url = url;
-		}
+        public PagedResult(string url)
+        {
+            _Url = url;
+        }
 
-		public IEnumerator<T> GetEnumerator()
-		{
-			return new PageResultEnumerator<T>();
-		}
+        public IEnumerator<I> GetEnumerator()
+        {
+            return new PageResultEnumerator<C,I>(_Url,_PageNumber, _PageSize);
+        }
 
-		IEnumerator IEnumerable.GetEnumerator()
-		{
-			return new PageResultEnumerator<T>();
-		}
-	}
+        IEnumerator IEnumerable.GetEnumerator()
+        {
+            return new PageResultEnumerator<C, I>(_Url,_PageNumber, _PageSize);
+        }
+    }
 }

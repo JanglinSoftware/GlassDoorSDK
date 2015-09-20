@@ -227,5 +227,16 @@ namespace GlassdoorUnitTest
 			//Assert.IsNotNull(something.States);
 			//Assert.IsTrue(something.States.Count > 40);
 		}
-	}
+
+        [TestMethod]
+        public void CompanySearchTestMethod()
+        {
+            var client = new Client(PartnerId, Key);
+
+             var companies = client.GetCompanies();
+
+            foreach (var company in companies)
+                System.Diagnostics.Debug.WriteLine(company.Name);
+        }
+    }
 }

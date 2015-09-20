@@ -1,53 +1,94 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace Janglin.Glassdoor.Client
 {
-	internal class PageResultEnumerator<T> : IEnumerator<T> where T : class
-	{
-		IEnumerator<T> _InternalEnumerator;
+    internal class PageResultEnumerator<C, I> : IEnumerator<I>
+        where C : PagedTypedResponse<I>, IEnumerable<I>
+        where I : class
+    {
+        IEnumerator<I> _InternalEnumerator;
+        private Task<C> _WebResponseTask;
+        private string _Url;
+        int _PageSize = 50;
+        int _PageNumber = 1;
+        bool IsLastPage;
 
-		public PageResultEnumerator(int pageNumber, int pageSize)
-		{
-			_WebResponseTask = WebRequester.GetAsync<CompanySearchResult>
+        public PageResultEnumerator(string url, int pageNumber, int pageSize)
+        {
+            _Url = url;
+            _PageSize = pageSize;
+            _PageNumber = pageNumber;
+            _WebResponseTask = WebRequester.GetAsync<C>(GetUrl());
 
-		}
+        }
 
-		public T Current
-		{
-			get
-			{
-				throw new NotImplementedException();
-			}
-		}
+        private string GetUrl()
+        {
+            return String.Format(_Url, _PageNumber, _PageSize);
+        }
 
-		object IEnumerator.Current
-		{
-			get
-			{
-				throw new NotImplementedException();
-			}
-		}
+        public I Current
+        {
+            get
+            {
+                return _InternalEnumerator.Current;
+            }
+        }
 
-		public void Dispose()
-		{
-			throw new NotImplementedException();
-		}
+        object IEnumerator.Current
+        {
+            get
+            {
+                return _InternalEnumerator.Current;
+            }
+        }
 
-		public bool MoveNext()
-		{
-			if(_InternalEnumerator==null)
-			{
+        public void Dispose()
+        {
+            if (_InternalEnumerator != null)
+                _InternalEnumerator.Dispose();
+        }
 
-			}
+        public bool MoveNext()
+        {
+            if (_InternalEnumerator == null)
+            {
+                if (IsLastPage) return false;
 
-			throw new NotImplementedException();
-		}
+                _WebResponseTask.Wait();
+                var result = _WebResponseTask.Result;
 
-		public void Reset()
-		{
-			throw new NotImplementedException();
-		}
-	}
+                _InternalEnumerator = result.GetEnumerator();
+                _WebResponseTask = null;
+
+                if (result.CurrentPageNumber < result.TotalNumberOfPages)
+                {
+                    _PageNumber = result.CurrentPageNumber + 1;
+                    _WebResponseTask = WebRequester.GetAsync<C>(GetUrl());
+                }
+                else
+                    IsLastPage = true;
+            }
+
+            if (!_InternalEnumerator.MoveNext())
+            {
+                _InternalEnumerator = null;
+                return MoveNext();
+            }
+            else
+                return true;
+        }
+
+        public void Reset()
+        {
+            if (_InternalEnumerator != null)
+            {
+                _InternalEnumerator.Dispose();
+                _InternalEnumerator = null;
+            }
+        }
+    }
 }

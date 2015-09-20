@@ -88,7 +88,7 @@ namespace Janglin.Glassdoor.Client
 				"returnEmployers", returnEmployers.ToStringIfNotNull(),
 				"admLevelRequested", admLevelRequested.ToStringIfNotNull());
 
-			return await GetAsync<JobsStats>(url);
+			return await WebRequester.GetAsync<JobsStats>(url);
 		}
 
 		/// <summary>A job progression request must specify "jobs-prog" for the action parameter in addition to the other required parameters, as well as specify a required country id (1=US is the only country supported right now), and a job title.</summary>
@@ -115,7 +115,7 @@ namespace Janglin.Glassdoor.Client
 				"jobTitle", jobTitle,
 				"countryId", 1.ToStringIfNotNull());
 
-			return await GetAsync<JobsProgression>(url);
+			return await WebRequester.GetAsync<JobsProgression>(url);
 		}
 
 		public async Task<CompanySearchResult> GetCompaniesAsync(int pageNumber = 1,
@@ -171,7 +171,7 @@ namespace Janglin.Glassdoor.Client
 				"pn", "{0}",
 				"ps", "{1}");
 
-			return new PagedResult<DetailedEmployer>(url);
+			return new PagedResult<CompanySearchResult, DetailedEmployer>(url);
 		}
 	}
 }

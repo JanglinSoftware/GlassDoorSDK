@@ -1,20 +1,24 @@
 ﻿using Newtonsoft.Json;
 using System.Collections.Generic;
+using System;
+using System.Collections;
 
 namespace Janglin.Glassdoor.Client
 {
-	public class CompanySearchResult
-	{
-		[JsonProperty("currentPageNumber")]
-		public string CurrentPageNumber { get; private set; }
+    [JsonObject]
+    public class CompanySearchResult : PagedTypedResponse<DetailedEmployer>, IEnumerable<DetailedEmployer>
+    {
+        [JsonProperty("employers")]
+        internal IEnumerable<DetailedEmployer> DetailedEmployers { get; private set; }
 
-		[JsonProperty("totalNumberOfPages")]
-		public string TotalNumberOfPages { get; private set; }
+        public IEnumerator<DetailedEmployer> GetEnumerator()
+        {
+            return DetailedEmployers.GetEnumerator();
+        }
 
-		[JsonProperty("totalRecordCount")]
-		public string TotalRecordCount { get; private set; }
-
-		[JsonProperty("employers")]
-		public IEnumerable<DetailedEmployer> DetailedEmployers{ get; private set; }
-	}
+        IEnumerator IEnumerable.GetEnumerator()
+        {
+            return DetailedEmployers.GetEnumerator();
+        }
+    }
 }
