@@ -22,7 +22,7 @@ namespace GlassdoorUnitTest
 
 			var something = jobstats.Result;
 
-			Assert.IsTrue(something.AttributionUrl.StartsWith("http://glassdoor.com/"));
+			Assert.IsTrue(something.AttributionUrl.StartsWith("http://www.glassdoor.com/"));
 			Assert.IsNull(something.Employers);
 			Assert.IsNull(something.JobTitles);
 			Assert.IsNotNull(something.States);
@@ -91,7 +91,7 @@ namespace GlassdoorUnitTest
 		{
 			var client = new Client(PartnerId, Key);
 
-			var jobstats = client.GetJobsStatsAsync(employer: 303, returnEmployers: true);
+			var jobstats = client.GetJobsStatsAsync(employer: "IBM", returnEmployers: true);
 
 			jobstats.Wait();
 
@@ -129,7 +129,7 @@ namespace GlassdoorUnitTest
 		{
 			var client = new Client(PartnerId, Key);
 
-			var jobstats = client.GetJobsStatsAsync(state: 3411, returnStates: true);
+			var jobstats = client.GetJobsStatsAsync(state: "South Carolina", returnStates: true);
 
 			jobstats.Wait();
 
@@ -140,7 +140,7 @@ namespace GlassdoorUnitTest
 			Assert.IsNull(something.Employers);
 			Assert.IsNull(something.Cities);
 			Assert.AreEqual(1, something.States.Count());
-			Assert.AreEqual(303, something.States.First().Key);
+			Assert.AreEqual("South Carolina", something.States.First().Key);
 		}
 
 		[TestMethod]
@@ -150,7 +150,7 @@ namespace GlassdoorUnitTest
 			{
 				var client = new Client("", Key);
 
-				var jobstats = client.GetJobsStatsAsync(state: -1);
+				var jobstats = client.GetJobsStatsAsync(state: "-1");
 
 				jobstats.Wait();
 
@@ -184,7 +184,7 @@ namespace GlassdoorUnitTest
 			{
 				var client = new Client(PartnerId, Key);
 
-				var jobstats = client.GetJobsStatsAsync(employer: -1);
+				var jobstats = client.GetJobsStatsAsync(employer: "-1");
 
 				jobstats.Wait();
 
@@ -221,7 +221,7 @@ namespace GlassdoorUnitTest
 
 			var something = jobstats.Result;
 
-			//Assert.IsTrue(something.AttributionUrl.StartsWith("http://glassdoor.com/"));
+			//Assert.IsTrue(something.AttributionUrl.StartsWith("http://www.glassdoor.com/"));
 			//Assert.IsNull(something.Employers);
 			//Assert.IsNull(something.JobTitles);
 			//Assert.IsNotNull(something.States);

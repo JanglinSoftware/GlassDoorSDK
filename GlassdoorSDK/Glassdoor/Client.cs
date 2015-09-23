@@ -50,10 +50,10 @@ namespace Janglin.Glassdoor.Api
         /// <returns></returns>
         public async Task<JobsStats> GetJobsStatsAsync(string callback = null,
             string queryPhrase = null,
-            int? employer = null,
+            string employer = null,
             string location = null,
             int? city = null,
-            int? state = null,
+            string state = null,
             string country = null,
             string fromAgeDays = null,
             JobType? jobType = null,
