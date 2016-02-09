@@ -8,8 +8,8 @@ namespace GlassdoorUnitTest
 	[TestClass]
 	public class ClientUnitTest
 	{
-		const string PartnerId = "43473";
-		const string Key = "iuYKOFxTrMe";
+		const string PartnerId = {your partner ID};
+		const string Key = {your key};
 
 		[TestMethod]
 		public void JobStatsReturnStatesTestMethod()
