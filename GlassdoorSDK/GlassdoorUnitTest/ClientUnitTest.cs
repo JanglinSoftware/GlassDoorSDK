@@ -8,8 +8,8 @@ namespace GlassdoorUnitTest
 	[TestClass]
 	public class ClientUnitTest
 	{
-		const string PartnerId = {your partner ID};
-		const string Key = {your key};
+		const string PartnerId = "43473";
+		const string Key = "iuYKOFxTrMe";
 
 		[TestMethod]
 		public void JobStatsReturnStatesTestMethod()
@@ -20,13 +20,13 @@ namespace GlassdoorUnitTest
 
 			jobstats.Wait();
 
-			var something = jobstats.Result;
+			var result = jobstats.Result;
 
-			Assert.IsTrue(something.AttributionUrl.StartsWith("http://www.glassdoor.com/"));
-			Assert.IsNull(something.Employers);
-			Assert.IsNull(something.JobTitles);
-			Assert.IsNotNull(something.States);
-			Assert.IsTrue(something.States.Count > 40);
+			Assert.IsTrue(result.AttributionUrl.StartsWith("http://www.glassdoor.com/"));
+			Assert.IsNull(result.Employers);
+			Assert.IsNull(result.JobTitles);
+			Assert.IsNotNull(result.States);
+			Assert.IsTrue(result.States.Count > 40);
 		}
 
 		[TestMethod]

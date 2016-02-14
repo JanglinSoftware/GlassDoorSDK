@@ -24,5 +24,34 @@ namespace Janglin.Glassdoor.Api
 
         [JsonProperty("cities")]
         public IEnumerable<City> Cities { get; private set; }
-    }
+
+		public override bool Equals(object obj)
+		{
+			var input = obj as JobsStats;
+
+			if (input == null)
+				return false;
+			else {
+				return input.AttributionUrl.Equals(AttributionUrl)
+					&& input.States.Equals(States)
+					&& input.JobTitles.Equals(JobTitles)
+					&& input.Employers.Equals(Employers)
+					&& input.Cities.Equals(Cities);
+			}
+		}
+
+		public override int GetHashCode()
+		{
+			return AttributionUrl.GetHashCode()
+				^ States.GetHashCode()
+				^ JobTitles.GetHashCode()
+				^ Employers.GetHashCode()
+				^ Cities.GetHashCode();
+		}
+
+		public override string ToString()
+		{
+			return AttributionUrl;
+		}
+	}
 }

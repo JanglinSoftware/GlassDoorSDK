@@ -24,5 +24,36 @@ namespace Janglin.Glassdoor.Api
 
 		[JsonProperty("longitude")]
 		public decimal Longitude { get; private set; }
+
+		public override bool Equals(object obj)
+		{
+			var input = obj as City;
+
+			if (input == null)
+				return false;
+			else {
+				return input.Name.Equals(Name)
+					&& input.StateAbbreviation.Equals(StateAbbreviation)
+					&& input.StateName.Equals(StateName)
+					&& input.Id.Equals(Id)
+					&& input.Latitude.Equals(Latitude)
+					&& input.Longitude.Equals(Longitude);
+			}
+		}
+
+		public override int GetHashCode()
+		{
+			return Name.GetHashCode()
+				^ StateAbbreviation.GetHashCode()
+				^ StateName.GetHashCode()
+				^ Id.GetHashCode()
+				^ Latitude.GetHashCode()
+				^ Longitude.GetHashCode();
+		}
+
+		public override string ToString()
+		{
+			return string.Format("{0}, {1}", Name, StateAbbreviation);
+		}
 	}
 }

@@ -13,5 +13,29 @@ namespace Janglin.Glassdoor.Api
 		[JsonProperty("width")]
 		public string Width { get; private set; }
 
+		public override bool Equals(object obj)
+		{
+			var input = obj as Image;
+
+			if (input == null)
+				return false;
+			else {
+				return input.Source.Equals(Source)
+					&& input.Height.Equals(Height)
+					&& input.Width.Equals(Width);
+			}
+		}
+
+		public override int GetHashCode()
+		{
+			return Source.GetHashCode()
+				^ Height.GetHashCode()
+				^ Width.GetHashCode();
+		}
+
+		public override string ToString()
+		{
+			return string.Format("{0} ({1}x{2})", Source, Height, Width);
+		}
 	}
 }
