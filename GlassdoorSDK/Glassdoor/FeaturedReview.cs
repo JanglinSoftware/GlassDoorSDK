@@ -1,7 +1,7 @@
 ﻿using Newtonsoft.Json;
 using System;
 
-namespace Janglin.Glassdoor.Api
+namespace Janglin.GlassDoor.Api
 {
 	public class FeaturedReview
 	{

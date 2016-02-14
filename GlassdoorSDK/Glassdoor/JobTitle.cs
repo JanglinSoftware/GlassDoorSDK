@@ -1,6 +1,6 @@
 ﻿using Newtonsoft.Json;
 
-namespace Janglin.Glassdoor.Api
+namespace Janglin.GlassDoor.Api
 {
 	public class JobTitle
 	{

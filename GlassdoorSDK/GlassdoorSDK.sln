@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.23107.0
+VisualStudioVersion = 14.0.24720.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Glassdoor", "Glassdoor\Glassdoor.csproj", "{D4AD4545-EE8F-4B05-895F-2D9351DACF1B}"
 EndProject
@@ -10,6 +10,12 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RestApiSdk", "RestApiSdk\RestApiSdk.csproj", "{846E01C7-D607-453A-922F-E38216AFC17C}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RestApiSdkUnitTest", "RestApiSdkUnitTest\RestApiSdkUnitTest.csproj", "{4CD069A8-6FE0-4D3C-BC07-285FA8BD0D74}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{37AE5ADF-0E42-48EF-8557-E0A71282A235}"
+	ProjectSection(SolutionItems) = preProject
+		nuget.exe = nuget.exe
+		NuGetPublish.ps1 = NuGetPublish.ps1
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

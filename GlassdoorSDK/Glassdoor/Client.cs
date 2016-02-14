@@ -3,13 +3,13 @@ using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace Janglin.Glassdoor.Api
+namespace Janglin.GlassDoor.Api
 {
     public class Client
     {
         /// <summary>Default constructor.</summary>
-        /// <param name="partnerId">The partner ID supplied by Glassdoor.</param>
-        /// <param name="key">The api key supplied by Glassdoor.</param>
+        /// <param name="partnerId">The partner ID supplied by GlassDoor.</param>
+        /// <param name="key">The api key supplied by GlassDoor.</param>
         /// <param name="userIp">The IP address of the end user to whom the API results will be shown.
         /// This is an optional user IP that will be applied to all subsequent calls unless the userIp parameter is set in that specific call.</param>
         public Client(string partnerId, string key, string userIp = "0.0.0.0")
@@ -188,7 +188,7 @@ namespace Janglin.Glassdoor.Api
         /// method is called on the enumerator and the present page is exhausted (i.e. Next() returns null). This allows front end development to create continous list/grid displays
         /// without concern for the API's pagination.
         /// <para>WARNING: Do not use LINQ to Objects to filter the result of this call. Use the parameters supplied with this method to filter the call. These parameters will 
-        /// be passed to the Glassdoor API server thru the HTTP request making the Glassdoor server perform the work for which it was designed.</para>
+        /// be passed to the GlassDoor API server thru the HTTP request making the GlassDoor server perform the work for which it was designed.</para>
         /// <para>If you need to more precisly control pagination, please use <see cref="GetCompaniesAsync(int, int, string, string, int?, int?, int?, string, string, string)>."/></para>
         /// <para>http://www.glassdoor.com/api/companiesApiActions.htm</para>
         /// </remarks>

@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+	<id>JanglinGlassDoorApiSdk</id>
+	<version>1.0.0</version>
+	<title>Janglin GlassDoor API SDK for .NET</title>
+	<authors>Daniel R. Przybylski</authors>
+	<owners>Janglin Software</owners>
+	<summary>A .NET SDK for the GlassDoor web API.</summary>
+	<licenseUrl>https://github.com/JanglinSoftware/GlassDoorSDK/blob/master/LICENSE.md</licenseUrl>
+	<projectUrl>https://github.com/JanglinSoftware/GlassDoorSDK</projectUrl>
+	<!--<iconUrl>http://ICON_URL_HERE_OR_DELETE_THIS_LINE</iconUrl>-->
+	<requireLicenseAcceptance>true</requireLicenseAcceptance>
+	<description>A .NET SDK for the GlassDoor web API offering strongly-typed objects asynchronous requests without all that mucking about with HTTP requests.</description>
+	<releaseNotes>Initial release.</releaseNotes>
+	<copyright>Copyright 2016</copyright>
+	<tags>GlassDoor API SDK .NET</tags>
+	<dependencies>
+	  <group>
+		<dependency  id="Newtonsoft.Json" version="8.0.2" />
+	  </group>
+	</dependencies>
+  </metadata>
+</package>

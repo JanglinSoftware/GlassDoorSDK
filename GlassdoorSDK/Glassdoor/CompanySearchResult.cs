@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System;
 using System.Collections;
 
-namespace Janglin.Glassdoor.Api
+namespace Janglin.GlassDoor.Api
 {
     [JsonObject]
     public class CompanySearchResult : PagedTypedResponse<DetailedEmployer>, IEnumerable<DetailedEmployer>

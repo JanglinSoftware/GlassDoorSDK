@@ -1,6 +1,6 @@
 ﻿using Newtonsoft.Json;
 
-namespace Janglin.Glassdoor.Api
+namespace Janglin.GlassDoor.Api
 {
     [JsonObject]
     public class TypedResponse<T> : Response

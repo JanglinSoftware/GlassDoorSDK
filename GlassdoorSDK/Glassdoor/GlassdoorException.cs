@@ -1,11 +1,11 @@
 ﻿using System;
 
-namespace Janglin.Glassdoor.Api
+namespace Janglin.GlassDoor.Api
 {
 	[Serializable]
-	public class GlassdoorException : Exception
+	public class GlassDoorException : Exception
 	{
-		public GlassdoorException(Response jsonResponse)
+		public GlassDoorException(Response jsonResponse)
 		{
 			Success = jsonResponse.Success;
 			Status = jsonResponse.Status;

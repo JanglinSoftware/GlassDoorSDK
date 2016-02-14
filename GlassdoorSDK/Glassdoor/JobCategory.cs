@@ -1,4 +1,4 @@
-﻿namespace Janglin.Glassdoor.Api
+﻿namespace Janglin.GlassDoor.Api
 {
 	public enum JobCategory
 	{
