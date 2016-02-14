@@ -199,7 +199,8 @@ namespace Janglin.GlassDoor.Api
             int? country = null,
             string userIp = null,
             string userAgent = "",
-            string callBack = null)
+            string callBack = null,
+			int pageSize = 1000)
         {
             var url = "http://api.glassdoor.com/api/api.htm".Parameters("action", "employers",
                 "v", "1",
@@ -216,7 +217,7 @@ namespace Janglin.GlassDoor.Api
                 "pn", "{0}",
                 "ps", "{1}");
 
-            return new PagedResult<CompanySearchResult, DetailedEmployer>(url);
+            return new PagedResult<CompanySearchResult, DetailedEmployer>(url) { PageSize = pageSize,};
         }
 
         /// <summary>Determines whether the method caller is setting the user IP for that call, 

@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
-<package >
+<package  xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
 	<id>JanglinGlassDoorApiSdk</id>
-	<version>1.0.0</version>
+	<version>1.0.1</version>
 	<title>Janglin GlassDoor API SDK for .NET</title>
 	<authors>Daniel R. Przybylski</authors>
 	<owners>Janglin Software</owners>
@@ -12,7 +12,10 @@
 	<!--<iconUrl>http://ICON_URL_HERE_OR_DELETE_THIS_LINE</iconUrl>-->
 	<requireLicenseAcceptance>true</requireLicenseAcceptance>
 	<description>A .NET SDK for the GlassDoor web API offering strongly-typed objects asynchronous requests without all that mucking about with HTTP requests.</description>
-	<releaseNotes>Initial release.</releaseNotes>
+	<releaseNotes>
+	  Added ReadMe.txt splash page.
+	  Added parameter to allow setting of pagesize for continuous pagination management for certain methods.
+	</releaseNotes>
 	<copyright>Copyright 2016</copyright>
 	<tags>GlassDoor API SDK .NET</tags>
 	<dependencies>
@@ -21,4 +24,7 @@
 	  </group>
 	</dependencies>
   </metadata>
+  <files>
+	<file src="ReadMe.txt" target="" />
+  </files>
 </package>

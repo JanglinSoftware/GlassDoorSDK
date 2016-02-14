@@ -8,8 +8,8 @@ namespace GlassDoorUnitTest
 	[TestClass]
 	public class JobStatsUnitTests
 	{
-		const string PartnerId = "asdf";
-		const string Key = "sdf";
+		const string PartnerId = "xxxxx";
+		const string Key = "xxxxxxxxxxxxxxxxxxxxx";
 
 		[TestMethod]
 		public void JobStatsQueryPhraseTestMethod()
@@ -71,18 +71,21 @@ namespace GlassDoorUnitTest
 		{
 			var client = new Client(PartnerId, Key);
 
-			var jobstats = client.GetJobsStatsAsync(returnJobTitles: true);
+			var jobstats = client.GetJobsStatsAsync(returnCities: true);
 
 			jobstats.Wait();
 
 			var result = jobstats.Result;
 
-			Assert.IsTrue(result.AttributionUrl.StartsWith("http://www.glassdoor.com/"));
-			Assert.IsNull(result.Employers);
-			Assert.IsNull(result.Cities);
-			Assert.IsNull(result.States);
-			Assert.IsNotNull(result.JobTitles);
-			Assert.IsTrue(result.JobTitles.Count() > 10);
+			//Assert.IsTrue(result.AttributionUrl.StartsWith("http://www.glassdoor.com/"));
+			//Assert.IsNull(result.Employers);
+			//Assert.IsNull(result.Cities);
+			//Assert.IsNull(result.States);
+			//Assert.IsNotNull(result.JobTitles);
+			//Assert.IsTrue(result.JobTitles.Count() > 10);
+
+			foreach (var city in result.Cities.OrderBy(c=>c.Name))
+				System.Diagnostics.Debug.WriteLine(city.Name + " " + city.NumberOfJobs);
 		}
 
 		[TestMethod]

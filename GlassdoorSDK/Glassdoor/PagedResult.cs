@@ -9,7 +9,6 @@ namespace Janglin.GlassDoor.Api
         where I : class
     {
         string _Url;
-        int _PageSize = 50;
         int _PageNumber = 0;
 
         public PagedResult(string url)
@@ -17,14 +16,16 @@ namespace Janglin.GlassDoor.Api
             _Url = url;
         }
 
-        public IEnumerator<I> GetEnumerator()
+		public int PageSize { get; set; } = 1000;
+
+		public IEnumerator<I> GetEnumerator()
         {
-            return new PageResultEnumerator<C,I>(_Url,_PageNumber, _PageSize);
+            return new PageResultEnumerator<C,I>(_Url,_PageNumber, PageSize);
         }
 
         IEnumerator IEnumerable.GetEnumerator()
         {
-            return new PageResultEnumerator<C, I>(_Url,_PageNumber, _PageSize);
+            return new PageResultEnumerator<C, I>(_Url,_PageNumber, PageSize);
         }
     }
 }
