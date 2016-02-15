@@ -29,9 +29,6 @@ namespace Janglin.RestApiSdk
         /// <returns>The fully qualified tag name as an XName type.</returns>
         static public XName Xmlns(this string value, string nameSpace = null)
         {
-            if (String.IsNullOrWhiteSpace(nameSpace))
-                return XName.Get(value, Properties.Settings.Default.PrimaryXmlNamespace);
-            else
                 return XName.Get(value, nameSpace);
         }
 
