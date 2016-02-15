@@ -1,9 +1,9 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Linq;
-using Janglin.GlassDoor.Api;
+using Janglin.Glassdoor.Api;
 using System;
 
-namespace GlassDoorUnitTest
+namespace GlassdoorUnitTest
 {
 	[TestClass]
 	public class ClientUnitTest
@@ -12,7 +12,7 @@ namespace GlassDoorUnitTest
 		const string Key = "asdf";
 
 		[TestMethod]
-		public void GlassDoorExceptionTestMethod()
+		public void GlassdoorExceptionTestMethod()
 		{
 			try
 			{
@@ -33,7 +33,7 @@ namespace GlassDoorUnitTest
 			}
 			catch (AggregateException ex)
 			{
-				var glassdoorexception = ex.InnerException as GlassDoorException;
+				var glassdoorexception = ex.InnerException as GlassdoorException;
 
 				if (glassdoorexception != null)
 				{
@@ -46,7 +46,7 @@ namespace GlassDoorUnitTest
 		}
 
 		[TestMethod]
-		public void GlassDoorException2TestMethod()
+		public void GlassdoorException2TestMethod()
 		{
 			try
 			{
@@ -66,7 +66,7 @@ namespace GlassDoorUnitTest
 			}
 			catch (AggregateException ex)
 			{
-				var glassdoorexception = ex.InnerException as GlassDoorException;
+				var glassdoorexception = ex.InnerException as GlassdoorException;
 
 				if (glassdoorexception != null)
 				{

@@ -1,4 +1,4 @@
-﻿namespace Janglin.GlassDoor.Api
+﻿namespace Janglin.Glassdoor.Api
 {
 	/// <summary>Scope the search to certain job types.</summary>
 	public enum JobType

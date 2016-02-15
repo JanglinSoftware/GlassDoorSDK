@@ -1,7 +1,7 @@
 ﻿using Newtonsoft.Json;
 using System.Collections.Generic;
 
-namespace Janglin.GlassDoor.Api
+namespace Janglin.Glassdoor.Api
 {
 	public class JobsProgression
     {

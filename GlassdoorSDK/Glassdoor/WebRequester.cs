@@ -6,7 +6,7 @@ using System.Linq;
 using System.Net;
 using System.Threading.Tasks;
 
-namespace Janglin.GlassDoor.Api
+namespace Janglin.Glassdoor.Api
 {
 	internal static class WebRequester
 	{
@@ -55,7 +55,7 @@ namespace Janglin.GlassDoor.Api
 			if (jsonresponse.Success)
 				return jsonresponse.Information as T;
 			else
-				throw new GlassDoorException(jsonresponse);
+				throw new GlassdoorException(jsonresponse);
 
 		}
 

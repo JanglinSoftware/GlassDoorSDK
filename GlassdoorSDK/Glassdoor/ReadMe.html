@@ -1,0 +1,118 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta charset="utf-8" />
+	<title>Welcome - Glassdoor .NET SDK</title>
+	<style>
+		body {
+			font-family: Calibri,Arial;
+			margin-left: 10%;
+			margin-right: 10%;
+			background-color: antiquewhite;
+		}
+
+		.Code {
+			font-family: Consolas;
+			margin-left: 5%;
+			margin-right: 5%;
+			padding: 4px;
+			background-color: aliceblue;
+			border-color: black;
+		}
+
+		.Comment {
+			color: green;
+		}
+
+		.Type {
+			color: blue;
+		}
+	</style>
+</head>
+<body>
+	<h1>Glassdoor .NET SDK</h1>
+	<h2>by Janglin Software</h2>
+	<h4>Version 1.0.2</h4>
+	<p>
+		A .NET-based SDK for the Glassdoor API which separates HTTP request overhead from business logic and front end formatting. Optimized for application development, the creation of URLs, HTTP Requests, managing of paginated responses and even HTTP exceptions are all managed by this SDK so you can get on with your XAML based app development.
+	</p>
+	<p>Please review the <a href="https://www.glassdoor.com/developer/index.htm" title="Glassdoor API Documentation">Glassdoor API Documentation</a>.</p>
+	<p>Make sure that you aquire partner key and ID from <a href="https://www.glassdoor.com/developer/register_input.htm" title="https://www.glassdoor.com/developer/register_input.htm">Glassdoor</a>.</p>
+	<h2>Samples</h2>
+	<h3>Hello, World.</h3>
+	<div class="Code">
+		<span class="Comment">// Instantiate the client:</span>
+		<br />
+		<span class="Type">var</span> client = <span class="Type">new</span> <span class="Type">Client</span>(partnerId, partnerKey);
+		<br />
+		<br />
+		<span class="Comment">
+			// The methods all tend to have large parameter lists with most parameters having default (usually null) values,
+			<br />
+			// So we recommend using named parameter syntax.
+		</span>
+		<br />
+		<span class="Type">var</span> jobstats = client.GetJobsStatsAsync(returnStates: <span class="Type">true</span>);
+		<br />
+		<br />
+		<span class="Comment">
+			// Make sure that you specify what information you want returned using the 'return' parameters.
+			<br />
+			// If you don't ask for Employer or City information, nothing will be returned.
+		</span>
+		<br />
+		<span class="Type">var</span> developerjobstats = client.GetJobsStatsAsync(queryPhrase: "Developer",
+		<br />
+		<div style="margin-left:5%;">
+			returnEmployers: <span class="Type">true</span>,
+			<br />
+			returnCities: <span class="Type">true</span>,
+			<br />
+			returnJobTitles: <span class="Type">true</span>,
+			<br />
+			returnStates: <span class="Type">true</span>);
+		</div>
+		<br />
+		<span class="Comment">
+			// Do other work here.
+		</span>
+		<br />
+		<br />
+		<span class="Comment">
+			// All calls are asychronous, so either call them in an async method, or wait for the task result.
+		</span>
+		<br />
+		jobstats.Wait();
+		<br />
+		developerjobstats.Wait();
+		<br />
+		<span class="Type">var</span> result = jobstats.Result;
+		<br />
+		<br />
+		<span class="Comment">
+			// Then see what you've got.
+		</span>
+		<br />
+		foreach (<span class="Type">var</span> state in result.States)
+		<br />
+		<div style="margin-left:5%;">
+			System.Diagnostics.Debug.WriteLine(state.Value.Name + " " + state.Value.NumberOfJobs);
+		</div>
+	</div>
+	<h2>Best Practices</h2>
+	<p>When at all possible, use the search capability of the API to filter what data you're looking for. Avoid filtering responses with LINQ after the request has been made to keep request responses brief.</p>
+	<h2>Frequently Asked Questions</h2>
+	<h3>Why are most methods asychronous?</h3>
+	<p>Use of asychronous methods allows other work to be done while waiting for the HTTP request to complete. The .NET Threading Task library makes this easy.</p>
+	<h3>Why are some methods not asychronous?</h3>
+	<p>Some method are not asychnronous because they return collections of data that are continuously concatenated from paged responses. Large collections of data are typically paged where information regarding how many records and how many pages and therefore how many more HTTP requests will be needed to retrieve all of the data are returned with the actual data. Some methods return a collection with a custom enumerator which will keep track of the pagination, whether more data is available and then retrieve that data seamlessly until no more pages are available. This helps app developers worry more about binding to a single collection without having to worry about whether there is more data in more pages and then having to process a new HTTP request.</p>
+	<h2>Release Notes</h2>
+	Renamed GlassDoor to Glassdoor.
+	<br />
+	New and improved splash page.
+	<br />
+	<br />
+	<footer>Copyright 2016 - Janglin Software</footer>
+</body>
+</html>

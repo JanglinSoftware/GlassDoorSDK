@@ -28,6 +28,6 @@ try{
 }
 finally{
     Remove-Item NuGet.exe
-    #Remove-Item JanglinGlassDoorApiSdk.1.0.1.nupkg
+    #Remove-Item JanglinGlassdoorApiSdk.1.0.2.nupkg
     RemoveSubFolders($dir)
 }

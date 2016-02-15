@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace Janglin.GlassDoor.Api
+namespace Janglin.Glassdoor.Api
 {
     internal class PageResultEnumerator<C, I> : IEnumerator<I>
         where C : PagedTypedResponse<I>, IEnumerable<I>

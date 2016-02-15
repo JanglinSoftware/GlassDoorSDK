@@ -1,9 +1,9 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Linq;
-using Janglin.GlassDoor.Api;
+using Janglin.Glassdoor.Api;
 using System;
 
-namespace GlassDoorUnitTest
+namespace GlassdoorUnitTest
 {
 	[TestClass]
 	public class CompaniesUnitTests

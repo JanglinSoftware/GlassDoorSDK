@@ -1,30 +1,30 @@
 <?xml version="1.0"?>
-<package  xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
-  <metadata>
-	<id>JanglinGlassDoorApiSdk</id>
-	<version>1.0.1</version>
-	<title>Janglin GlassDoor API SDK for .NET</title>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+ <metadata>
+	<id>JanglinGlassdoorApiSdk</id>
+	<version>1.0.2</version>
+	<title>Janglin Glassdoor API SDK for .NET</title>
 	<authors>Daniel R. Przybylski</authors>
 	<owners>Janglin Software</owners>
-	<summary>A .NET SDK for the GlassDoor web API.</summary>
-	<licenseUrl>https://github.com/JanglinSoftware/GlassDoorSDK/blob/master/LICENSE.md</licenseUrl>
-	<projectUrl>https://github.com/JanglinSoftware/GlassDoorSDK</projectUrl>
+	<summary>A .NET SDK for the Glassdoor web API.</summary>
+	<licenseUrl>https://github.com/JanglinSoftware/GlassdoorSDK/blob/master/LICENSE.md</licenseUrl>
+	<projectUrl>https://github.com/JanglinSoftware/GlassdoorSDK</projectUrl>
 	<!--<iconUrl>http://ICON_URL_HERE_OR_DELETE_THIS_LINE</iconUrl>-->
 	<requireLicenseAcceptance>true</requireLicenseAcceptance>
-	<description>A .NET SDK for the GlassDoor web API offering strongly-typed objects asynchronous requests without all that mucking about with HTTP requests.</description>
+	<description>A .NET SDK for the Glassdoor web API offering strongly-typed objects asynchronous requests without all that mucking about with HTTP requests.</description>
 	<releaseNotes>
-	  Added ReadMe.txt splash page.
-	  Added parameter to allow setting of pagesize for continuous pagination management for certain methods.
+	 Renamed GlassDoor to Glassdoor.
+	 New and improved splash page.
 	</releaseNotes>
-	<copyright>Copyright 2016</copyright>
-	<tags>GlassDoor API SDK .NET</tags>
+	<copyright>Janglin Software - Copyright 2016</copyright>
+	<tags>Glassdoor API SDK .NET</tags>
 	<dependencies>
-	  <group>
-		<dependency  id="Newtonsoft.Json" version="8.0.2" />
-	  </group>
+	 <group>
+		<dependency id="Newtonsoft.Json" version="8.0.2" />
+	 </group>
 	</dependencies>
-  </metadata>
-  <files>
-	<file src="ReadMe.txt" target="" />
-  </files>
+ </metadata>
+ <files>
+	<file src="ReadMe.html" target="" />
+ </files>
 </package>

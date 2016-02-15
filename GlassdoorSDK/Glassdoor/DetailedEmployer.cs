@@ -1,6 +1,6 @@
 ﻿using Newtonsoft.Json;
 
-namespace Janglin.GlassDoor.Api
+namespace Janglin.Glassdoor.Api
 {
 	public class DetailedEmployer : Employer
 	{
@@ -48,5 +48,50 @@ namespace Janglin.GlassDoor.Api
 
 		[JsonProperty("ceo")]
 		public Ceo Ceo { get; private set; }
+
+		public override bool Equals(object obj)
+		{
+			var input = obj as DetailedEmployer;
+
+			if (input == null)
+				return false;
+			else
+			{
+				return input.AttributionURL.Equals(Name)
+					&& input.Website.Equals(Website)
+					&& input.IsEEP.Equals(IsEEP)
+					&& input.ExactMatch.Equals(ExactMatch)
+					&& input.Industry.Equals(Industry)
+					&& input.NumberOfRatings.Equals(NumberOfRatings)
+					&& input.OverallRating.Equals(OverallRating)
+					&& input.RatingDescription.Equals(RatingDescription)
+					&& input.CultureAndValuesRating.Equals(CultureAndValuesRating)
+					&& input.SeniorLeadershipRating.Equals(SeniorLeadershipRating)
+					&& input.CompensationAndBenefitsRating.Equals(CompensationAndBenefitsRating)
+					&& input.CareerOpportunitiesRating.Equals(CareerOpportunitiesRating)
+					&& input.WorkLifeBalanceRating.Equals(WorkLifeBalanceRating)
+					&& input.FeaturedReview.Equals(FeaturedReview)
+					&& input.Ceo.Equals(Ceo);
+			}
+		}
+
+		public override int GetHashCode()
+		{
+			return AttributionURL.GetHashCode()
+				^ Website.GetHashCode()
+				^ IsEEP.GetHashCode()
+				^ ExactMatch.GetHashCode()
+				^ Industry.GetHashCode()
+				^ NumberOfRatings.GetHashCode()
+				^ OverallRating.GetHashCode()
+				^ RatingDescription.GetHashCode()
+				^ CultureAndValuesRating.GetHashCode()
+				^ SeniorLeadershipRating.GetHashCode()
+				^ CompensationAndBenefitsRating.GetHashCode()
+				^ CareerOpportunitiesRating.GetHashCode()
+				^ WorkLifeBalanceRating.GetHashCode()
+				^ FeaturedReview.GetHashCode()
+				^ Ceo.GetHashCode();
+		}
 	}
 }
