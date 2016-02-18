@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <id>JanglinGlassdoorApiSdk</id>
+    <version>1.0.3</version>
+    <title>Janglin Glassdoor API SDK for .NET</title>
+    <authors>Daniel R. Przybylski</authors>
+    <owners>Janglin Software</owners>
+    <licenseUrl>https://github.com/JanglinSoftware/GlassdoorSDK/blob/master/LICENSE.md</licenseUrl>
+    <projectUrl>https://github.com/JanglinSoftware/GlassdoorSDK</projectUrl>
+    <requireLicenseAcceptance>true</requireLicenseAcceptance>
+    <description>A .NET SDK for the Glassdoor web API offering strongly-typed objects asynchronous requests without all that mucking about with HTTP requests.</description>
+    <summary>A .NET SDK for the Glassdoor web API.</summary>
+    <releaseNotes>Renamed GlassDoor to Glassdoor.
+	  New and improved splash page.
+	  NuGet package bug fixes.</releaseNotes>
+    <copyright>Janglin Software - Copyright 2016</copyright>
+    <tags>Glassdoor API SDK .NET</tags>
+    <dependencies>
+      <dependency id="Newtonsoft.Json" version="8.0.2" />
+    </dependencies>
+  </metadata>
+</package>

@@ -6,11 +6,11 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("JanglinGlassdoorSDK")]
-[assembly: AssemblyDescription("")]
-[assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
+[assembly: AssemblyDescription("A .NET SDK for the Glassdoor.com API.")]
+[assembly: AssemblyConfiguration(".NET 4.5")]
+[assembly: AssemblyCompany("Janglin Software")]
 [assembly: AssemblyProduct("Janglin Glassdoor SDK")]
-[assembly: AssemblyCopyright("Copyright ©  2016")]
+[assembly: AssemblyCopyright("Copyright © Janglin Software 2016")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

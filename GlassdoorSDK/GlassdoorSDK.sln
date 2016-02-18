@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RestApiSdkUnitTest", "RestA
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{37AE5ADF-0E42-48EF-8557-E0A71282A235}"
 	ProjectSection(SolutionItems) = preProject
+		install.ps1 = install.ps1
+		JanglinGlassdoor.nuspec = JanglinGlassdoor.nuspec
 		nuget.exe = nuget.exe
 		NuGetPublish.ps1 = NuGetPublish.ps1
 	EndProjectSection

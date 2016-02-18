@@ -6,11 +6,11 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("RestApiUniversalSdk")]
-[assembly: AssemblyDescription("")]
-[assembly: AssemblyConfiguration("")]
+[assembly: AssemblyDescription("Common REST API SDK functionality.")]
+[assembly: AssemblyConfiguration("UWP")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("RestApiUniversalSdk")]
-[assembly: AssemblyCopyright("Copyright ©  2016")]
+[assembly: AssemblyProduct("RestApiSdk")]
+[assembly: AssemblyCopyright("Copyright © Janglin Software 2016")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

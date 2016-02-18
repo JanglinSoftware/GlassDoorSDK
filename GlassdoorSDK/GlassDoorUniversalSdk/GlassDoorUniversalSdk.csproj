@@ -8,7 +8,7 @@
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Janglin.Glassdoor.Api</RootNamespace>
-    <AssemblyName>GlassDoorSdk</AssemblyName>
+    <AssemblyName>GlassdoorSdk</AssemblyName>
     <DefaultLanguage>en-US</DefaultLanguage>
     <TargetPlatformIdentifier>UAP</TargetPlatformIdentifier>
     <TargetPlatformVersion>10.0.10586.0</TargetPlatformVersion>
@@ -104,7 +104,6 @@
   </PropertyGroup>
   <ItemGroup>
     <!-- A reference to the entire .Net Framework and Windows SDK are automatically included -->
-    <None Include="JanglinGlassdoor.nuspec" />
     <None Include="project.json" />
   </ItemGroup>
   <ItemGroup>
