@@ -46,17 +46,12 @@
   <ItemGroup>
     <Compile Include="Json\Request.cs" />
     <Compile Include="Json\Response.cs" />
-    <Compile Include="Request.cs" />
-    <Compile Include="Response.cs" />
-    <Compile Include="RestException.cs" />
-    <Compile Include="Extentions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
-    <Compile Include="Verb.cs" />
     <Compile Include="Xml\ComplexArrayPropertyAttribute.cs" />
     <Compile Include="Xml\ComplexPropertyAttribute.cs" />
     <Compile Include="Xml\EnumerableResponse.cs" />
@@ -75,6 +70,7 @@
     </None>
   </ItemGroup>
   <ItemGroup />
+  <Import Project="..\RestApiSdkShared\RestApiSdkShared.projitems" Label="Shared" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

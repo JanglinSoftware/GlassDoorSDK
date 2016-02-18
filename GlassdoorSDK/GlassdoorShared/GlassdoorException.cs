@@ -2,7 +2,6 @@
 
 namespace Janglin.Glassdoor.Api
 {
-	[Serializable]
 	public class GlassdoorException : Exception
 	{
 		public GlassdoorException(Response jsonResponse)

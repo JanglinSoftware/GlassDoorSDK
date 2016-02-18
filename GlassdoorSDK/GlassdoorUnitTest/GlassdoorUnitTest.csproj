@@ -63,6 +63,12 @@
     <None Include="app.config" />
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Glassdoor\Glassdoor.csproj">
+      <Project>{d4ad4545-ee8f-4b05-895f-2d9351dacf1b}</Project>
+      <Name>Glassdoor</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
       <ItemGroup>

@@ -29,9 +29,6 @@ namespace Janglin.RestApiSdk
         /// <returns>The fully qualified tag name as an XName type.</returns>
         static public XName Xmlns(this string value, string nameSpace = null)
         {
-            if (String.IsNullOrWhiteSpace(nameSpace))
-                return XName.Get(value, Properties.Settings.Default.PrimaryXmlNamespace);
-            else
                 return XName.Get(value, nameSpace);
         }
 
@@ -59,7 +56,7 @@ namespace Janglin.RestApiSdk
 		/// <returns>The complete URL string with the base URL string appended with the parameters.</returns>
 		/// <exception cref="ArgumentNullException">The <paramref name="nameValuePairs"/> parameter cannot be null.</exception>
 		/// <exception cref="ArgumentException">There must be an even number of <paramref name="nameValuePairs"/> parameters.</exception>
-		static internal string Parameters(this string urlbase, params string[] nameValuePairs)
+		static public string Parameters(this string urlbase, params string[] nameValuePairs)
 		{
 			if (nameValuePairs == null) throw new ArgumentNullException("nameValuePairs", "Parameter is null");
 			if (nameValuePairs.Length % 2 != 0) throw new ArgumentException("There must be an even number of Name/Value Pair parameters.", "nameValuePairs");
