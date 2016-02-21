@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <SharedGUID>edf8f7e6-5902-4fa6-b10a-2ec7482a859d</SharedGUID>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration">
+    <Import_RootNamespace>Janglin.Glassdoor.Api</Import_RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)Ceo.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)City.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Client.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)CompanySearchResult.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)DetailedEmployer.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Employer.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)FeaturedReview.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)GlassdoorException.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Image.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)JobCategory.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)JobsProgression.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)JobsStats.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)JobTitle.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)JobType.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)NextJob.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)PagedResult.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)PageResultEnumerator.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Response.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Result.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)State.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)WebRequester.cs" />
+  </ItemGroup>
+</Project>

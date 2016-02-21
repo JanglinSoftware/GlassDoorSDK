@@ -1,1 +1,0 @@
-﻿$DTE.ItemOperations.Navigate("http://janglin.com/Glassdoor")
