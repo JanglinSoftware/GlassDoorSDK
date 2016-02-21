@@ -110,12 +110,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Properties\GlassDoorUniversalSdk.rd.xml" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\RestApiUniversalSdk\RestApiUniversalSdk.csproj">
-      <Project>{24c8d9d7-6c5e-4d9b-8b64-c1822cc0ee56}</Project>
-      <Name>RestApiUniversalSdk</Name>
-    </ProjectReference>
-  </ItemGroup>
   <Import Project="..\GlassdoorShared\GlassdoorShared.projitems" Label="Shared" />
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>

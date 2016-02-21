@@ -34,6 +34,10 @@
       <HintPath>..\packages\Newtonsoft.Json.8.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="RestApiSdk, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Janglin.RestApiSdk.1.1.0\lib\net45\RestApiSdk.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Collections" />
     <Reference Include="System.Collections.Concurrent" />
@@ -69,12 +73,6 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\RestApiSdk\RestApiSdk.csproj">
-      <Project>{846e01c7-d607-453a-922f-e38216afc17c}</Project>
-      <Name>RestApiSdk</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="..\GlassdoorShared\GlassdoorShared.projitems" Label="Shared" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
