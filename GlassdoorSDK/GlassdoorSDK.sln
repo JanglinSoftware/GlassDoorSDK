@@ -25,7 +25,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RestApiUniversalSdk", "Rest
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RestApiUniversalSdkTests", "RestApiUniversalSdkTests\RestApiUniversalSdkTests.csproj", "{00A0A6E1-DACA-427C-8AC7-1DFB67A0CF41}"
 EndProject
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "GlassDoorShared", "GlassDoorShared\GlassDoorShared.shproj", "{79DB4C0E-04E0-4029-B966-B7F311BDB9C2}"
+EndProject
 Global
+	GlobalSection(SharedMSBuildProjectFiles) = preSolution
+		GlassDoorShared\GlassDoorShared.projitems*{79db4c0e-04e0-4029-b966-b7f311bdb9c2}*SharedItemsImports = 13
+	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Debug|ARM = Debug|ARM
