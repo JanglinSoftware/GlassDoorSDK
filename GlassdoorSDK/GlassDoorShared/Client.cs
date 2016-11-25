@@ -1,11 +1,10 @@
-﻿using Janglin.RestApiSdk;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
 namespace Janglin.Glassdoor.Api
 {
-    public class Client
+	public class Client
     {
         /// <summary>Default constructor.</summary>
         /// <param name="partnerId">The partner ID supplied by Glassdoor.</param>

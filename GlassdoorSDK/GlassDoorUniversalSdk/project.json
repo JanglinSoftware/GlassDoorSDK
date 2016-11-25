@@ -1,9 +1,9 @@
 ﻿{
   "dependencies": {
-    "Janglin.RestApiSdk": "1.1.0",
-    "Microsoft.NETCore.UniversalWindowsPlatform": "5.0.0",
-    "Newtonsoft.Json": "8.0.2",
-    "NuGet.CommandLine": "3.3.0"
+    "Janglin.RestApiSdk": "2.0.2",
+    "Microsoft.NETCore.UniversalWindowsPlatform": "5.2.2",
+    "Newtonsoft.Json": "9.0.1",
+    "NuGet.CommandLine": "3.4.3"
   },
   "frameworks": {
     "uap10.0": {}

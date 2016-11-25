@@ -1,0 +1,9 @@
+C:\Users\danp\Source\Repos\GlassDoorSDK\GlassdoorSDK\Glassdoor\bin\Debug\GlassdoorSdk.dll.config
+C:\Users\danp\Source\Repos\GlassDoorSDK\GlassdoorSDK\Glassdoor\bin\Debug\GlassdoorSdk.dll
+C:\Users\danp\Source\Repos\GlassDoorSDK\GlassdoorSDK\Glassdoor\bin\Debug\GlassdoorSdk.pdb
+C:\Users\danp\Source\Repos\GlassDoorSDK\GlassdoorSDK\Glassdoor\bin\Debug\Newtonsoft.Json.dll
+C:\Users\danp\Source\Repos\GlassDoorSDK\GlassdoorSDK\Glassdoor\bin\Debug\RestApiSdk.dll
+C:\Users\danp\Source\Repos\GlassDoorSDK\GlassdoorSDK\Glassdoor\bin\Debug\Newtonsoft.Json.xml
+C:\Users\danp\Source\Repos\GlassDoorSDK\GlassdoorSDK\Glassdoor\obj\Debug\Glassdoor.csprojResolveAssemblyReference.cache
+C:\Users\danp\Source\Repos\GlassDoorSDK\GlassdoorSDK\Glassdoor\obj\Debug\GlassdoorSdk.dll
+C:\Users\danp\Source\Repos\GlassDoorSDK\GlassdoorSDK\Glassdoor\obj\Debug\GlassdoorSdk.pdb

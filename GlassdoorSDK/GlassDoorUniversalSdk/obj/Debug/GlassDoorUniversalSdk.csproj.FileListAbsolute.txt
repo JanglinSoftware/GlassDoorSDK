@@ -1,0 +1,17 @@
+C:\Users\danp\Source\Repos\GlassDoorSDK\GlassdoorSDK\GlassDoorUniversalSdk\bin\Debug\GlassdoorSdk.dll
+C:\Users\danp\Source\Repos\GlassDoorSDK\GlassdoorSDK\GlassDoorUniversalSdk\bin\Debug\GlassdoorSdk.pdb
+C:\Users\danp\Source\Repos\GlassDoorSDK\GlassdoorSDK\GlassDoorUniversalSdk\bin\Debug\GlassdoorSdk.pri
+C:\Users\danp\Source\Repos\GlassDoorSDK\GlassdoorSDK\GlassDoorUniversalSdk\obj\Debug\GlassDoorUniversalSdk.csprojResolveAssemblyReference.cache
+C:\Users\danp\Source\Repos\GlassDoorSDK\GlassdoorSDK\GlassDoorUniversalSdk\obj\Debug\GlassdoorSdk.dll
+C:\Users\danp\Source\Repos\GlassDoorSDK\GlassdoorSDK\GlassDoorUniversalSdk\obj\Debug\GlassdoorSdk.pdb
+C:\Users\danp\Source\Repos\GlassDoorSDK\GlassdoorSDK\GlassDoorUniversalSdk\obj\Debug\priconfig.xml
+C:\Users\danp\Source\Repos\GlassDoorSDK\GlassdoorSDK\GlassDoorUniversalSdk\obj\Debug\priconfig.xml.intermediate
+C:\Users\danp\Source\Repos\GlassDoorSDK\GlassdoorSDK\GlassDoorUniversalSdk\obj\Debug\layout.resfiles
+C:\Users\danp\Source\Repos\GlassDoorSDK\GlassdoorSDK\GlassDoorUniversalSdk\obj\Debug\layout.resfiles.intermediate
+C:\Users\danp\Source\Repos\GlassDoorSDK\GlassdoorSDK\GlassDoorUniversalSdk\obj\Debug\resources.resfiles
+C:\Users\danp\Source\Repos\GlassDoorSDK\GlassdoorSDK\GlassDoorUniversalSdk\obj\Debug\resources.resfiles.intermediate
+C:\Users\danp\Source\Repos\GlassDoorSDK\GlassdoorSDK\GlassDoorUniversalSdk\obj\Debug\pri.resfiles
+C:\Users\danp\Source\Repos\GlassDoorSDK\GlassdoorSDK\GlassDoorUniversalSdk\obj\Debug\pri.resfiles.intermediate
+C:\Users\danp\Source\Repos\GlassDoorSDK\GlassdoorSDK\GlassDoorUniversalSdk\obj\Debug\qualifiers.txt
+C:\Users\danp\Source\Repos\GlassDoorSDK\GlassdoorSDK\GlassDoorUniversalSdk\obj\Debug\qualifiers.txt.intermediate
+C:\Users\danp\Source\Repos\GlassDoorSDK\GlassdoorSDK\GlassDoorUniversalSdk\obj\Debug\MultipleQualifiersPerDimensionFound.txt
