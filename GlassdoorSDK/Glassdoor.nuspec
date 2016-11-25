@@ -1,26 +1,26 @@
 <?xml version="1.0"?>
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
-  <metadata>
-	<id>JanglinGlassdoorApiSdk</id>
-	<version>2.0.0</version>
-	<title>Janglin Glassdoor API SDK for .NET</title>
-	<authors>Daniel R. Przybylski</authors>
-	<owners>Janglin Software</owners>
-	<summary>A .NET SDK for the Glassdoor web API.</summary>
-	<licenseUrl>https://github.com/JanglinSoftware/GlassdoorSDK/blob/master/LICENSE.md</licenseUrl>
-	<projectUrl>https://github.com/JanglinSoftware/GlassdoorSDK</projectUrl>
-	<iconUrl>http://janglin.com/content/favicon.ico</iconUrl>
-	<requireLicenseAcceptance>true</requireLicenseAcceptance>
-	<description>A .NET SDK for the Glassdoor web API offering strongly-typed objects thru asynchronous requests without all that mucking about with HTTP requests.</description>
-	<releaseNotes>
-	  Targeting various frameworks including Universal Windows Platform.
-	</releaseNotes>
-	<copyright>Janglin Software - Copyright 2016</copyright>
-	<tags>Glassdoor API SDK .NET</tags>
-	<dependencies>
-	  <group>
-		<dependency id="Janglin.RestApiSdk" version="1.0.0" />
-	  </group>
-	</dependencies>
-  </metadata>
+	<metadata>
+		<id>JanglinGlassdoorApiSdk</id>
+		<version>3.0.0</version>
+		<title>Janglin Glassdoor API SDK for .NET</title>
+		<authors>Daniel R. Przybylski</authors>
+		<owners>Janglin Software</owners>
+		<summary>A .NET SDK for the Glassdoor web API.</summary>
+		<licenseUrl>https://github.com/JanglinSoftware/GlassdoorSDK/blob/master/LICENSE.md</licenseUrl>
+		<projectUrl>https://github.com/JanglinSoftware/GlassdoorSDK</projectUrl>
+		<iconUrl>http://janglin.com/content/favicon.ico</iconUrl>
+		<requireLicenseAcceptance>true</requireLicenseAcceptance>
+		<description>A .NET SDK for the Glassdoor web API offering strongly-typed objects thru asynchronous requests without all that mucking about with HTTP requests.</description>
+		<releaseNotes>
+			Now using Janglin Rest API SDK 2.0.3.
+		</releaseNotes>
+		<copyright>Janglin Software - Copyright 2016</copyright>
+		<tags>Glassdoor API SDK .NET</tags>
+		<dependencies>
+			<group>
+				<dependency id="Janglin.RestApiSdk" version="2.0.3" />
+			</group>
+		</dependencies>
+	</metadata>
 </package>

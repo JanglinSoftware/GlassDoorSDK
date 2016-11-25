@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Janglin.Rest.Sdk;
+using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
@@ -77,7 +78,7 @@ namespace Janglin.Glassdoor.Api
                 "useragent", userAgent,
                 "callback", callback,
                 "q", queryPhrase,
-                "e", employer.ToStringIfNotNull(),
+                "e", employer.EmptyIfNull(),
                 "l", location,
                 "city", city.ToStringIfNotNull(),
                 "state", state.ToStringIfNotNull(),

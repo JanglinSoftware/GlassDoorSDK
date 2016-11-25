@@ -26,12 +26,11 @@ try{
 	Push-Location 'NuGet'
 
     #This file could change name with a NuGet update for the NuGet command line package!
-    Copy-Item ..\packages\NuGet.CommandLine.3.3.0\tools\NuGet.exe NuGet.exe
+    Copy-Item ..\packages\NuGet.CommandLine.3.4.3\tools\NuGet.exe NuGet.exe
     Copy-Item ..\Glassdoor.nuspec Glassdoor.nuspec
 
 	& .\NuGet.exe pack Glassdoor.nuspec
-	& .\NuGet.exe setApiKey ec102be3-f205-454b-a412-d87ff0c9008c
-	& .\NuGet.exe push JanglinGlassdoorApiSdk.2.0.0.nupkg
+	& .\NuGet.exe push JanglinGlassdoorApiSdk.3.0.0.nupkg ec102be3-f205-454b-a412-d87ff0c9008c -s https://www.nuget.org/api/v2/package
 }
 finally{
 	Push-Location '..'
