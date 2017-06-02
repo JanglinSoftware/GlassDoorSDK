@@ -1,0 +1,1 @@
+﻿$DTE.ItemOperations.Navigate("http://alfetta159-001-site1.ctempurl.com/")
