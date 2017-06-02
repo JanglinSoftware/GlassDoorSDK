@@ -5,3 +5,13 @@
 /GlassdoorSDK/.vs
 /GlassdoorSDK/Glassdoor/bin
 /GlassdoorSDK/Glassdoor/bin
+/GlassdoorSDK/Glassdoor/obj/Release
+/GlassdoorSDK/Glassdoor/lib
+/GlassdoorSDK/GlassdoorUnitTest/obj/Release
+/GlassdoorSDK/GlassdoorUnitTest/bin/Release
+/GlassdoorSDK/GlassDoorUniversalSdk/.vs/GlassDoorUniversalSdk/v15/.suo
+/GlassdoorSDK/GlassDoorUniversalSdk/project.lock.json
+/GlassdoorSDK/GlassDoorUniversalSdk/obj/Release
+/GlassdoorSDK/GlassDoorUniversalSdk/bin/Release
+/GlassdoorSDK/GlassDoorUniversalSdkTests/project.lock.json
+/GlassdoorSDK/packages
