@@ -1,4 +1,4 @@
-﻿using Janglin.RestApiSdk;
+﻿using Janglin.Rest.Sdk;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;

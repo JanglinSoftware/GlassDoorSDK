@@ -1,4 +1,4 @@
-﻿using Janglin.RestApiSdk;
+﻿using Janglin.Rest.Sdk;
 using Newtonsoft.Json;
 using System;
 using System.IO;
